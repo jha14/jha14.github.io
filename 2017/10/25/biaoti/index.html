@@ -1,192 +1,674 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>biaoti | Han&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="have a try">
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="biaoti">
+<meta property="og:title" content="R语言基础（一）">
 <meta property="og:url" content="http://han.com/2017/10/25/biaoti/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
-<meta property="og:description" content="have a try">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-25T15:01:33.000Z">
+<meta property="og:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-25T20:10:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="biaoti">
-<meta name="twitter:description" content="have a try">
+<meta name="twitter:title" content="R语言基础（一）">
+<meta name="twitter:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://han.com/2017/10/25/biaoti/"/>
+
+
+
+
+
+  <title>R语言基础（一） | Han's Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Han&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Han&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Study Hard, Play Hard...</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://han.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-biaoti" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/25/biaoti/" class="article-date">
-  <time datetime="2017-10-25T07:55:31.000Z" itemprop="datePublished">2017-10-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    <h1 class="article-title" itemprop="name">
-      biaoti
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Han's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Study Hard, Play Hard...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://han.com/2017/10/25/biaoti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Han">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Han's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">R语言基础（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T09:55:31+02:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>have a try</p>
+      
+
+      
+        <p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。<br><a id="more"></a></p>
+<h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">5</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>() x &lt;-<span class="number">4</span></div><div class="line">&gt; f()</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">5</span></div></pre></td></tr></table></figure>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数之外创建的变量，在函数内部也可以访问。<br>可以通过&lt;&lt;-在函数内部给全局变量赋值</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; y &lt;- <span class="number">4</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>(x) y &lt;&lt;- <span class="number">3</span></div><div class="line">&gt; f()</div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="number">3</span></div></pre></td></tr></table></figure>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; g &lt;- <span class="keyword">function</span>(x, y=<span class="number">2</span>, z=<span class="literal">T</span>)&#123;<span class="keyword">...</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="R语言的数据结构"><a href="#R语言的数据结构" class="headerlink" title="R语言的数据结构"></a>R语言的数据结构</h2><h3 id="1-向量-Vector"><a href="#1-向量-Vector" class="headerlink" title="1. 向量 Vector"></a>1. 向量 Vector</h3><p>向量是R语言的核心。一个向量内部的数据类型是单一的，不可以由整数元素和字符串混合构成。<br>在R语言中即使单个的数实际上也是由向量所表示的</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">8</span></div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">8</span></div></pre></td></tr></table></figure>
+<h3 id="2-字符串-Character"><a href="#2-字符串-Character" class="headerlink" title="2. 字符串 Character"></a>2. 字符串 Character</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; y &lt;- <span class="string">"abc"</span></div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span></div><div class="line">&gt; length(y)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span></div></pre></td></tr></table></figure>
+<h4 id="字符串连接与分割"><a href="#字符串连接与分割" class="headerlink" title="字符串连接与分割"></a>字符串连接与分割</h4><p>使用<code>paste</code>连接字符串，用<code>strsplit</code>分割字符串</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt; u &lt;- paste(<span class="string">"abc"</span>, <span class="string">"de"</span>, <span class="string">"f"</span>)</div><div class="line">&gt; u</div><div class="line">[<span class="number">1</span>] <span class="string">"abc de f"</span></div><div class="line">&gt; v &lt;- strsplit(u, <span class="string">" "</span>)</div><div class="line">&gt; v</div><div class="line">[[<span class="number">1</span>]]</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span> <span class="string">"de"</span>  <span class="string">"f"</span>  </div><div class="line"></div><div class="line">&gt; v[[<span class="number">1</span>]]</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span> <span class="string">"de"</span>  <span class="string">"f"</span>  </div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h3 id="3-矩阵"><a href="#3-矩阵" class="headerlink" title="3. 矩阵"></a>3. 矩阵</h3><p>也可以理解为按列存放的向量</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; m &lt;- rbind(rnorm(<span class="number">2</span>), rnorm(<span class="number">2</span>))</div><div class="line">&gt; m</div><div class="line">           [,<span class="number">1</span>]       [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,] <span class="number">0.07614777</span> <span class="number">0.26227249</span></div><div class="line">[<span class="number">2</span>,] <span class="number">0.81721921</span> <span class="number">0.05898863</span></div><div class="line">&gt; m[<span class="number">3</span>]</div><div class="line">[<span class="number">1</span>] <span class="number">0.2622725</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h3 id="4-列表-List"><a href="#4-列表-List" class="headerlink" title="4. 列表 List"></a>4. 列表 List</h3><h4 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; x &lt;- list(u = <span class="number">2</span>, v = <span class="string">"abc"</span>)</div><div class="line">&gt; x</div><div class="line">$u</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div><div class="line"></div><div class="line">$v</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span></div><div class="line"></div><div class="line">&gt; x$u</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div></pre></td></tr></table></figure>
+<h4 id="列表作为函数返回值"><a href="#列表作为函数返回值" class="headerlink" title="列表作为函数返回值"></a>列表作为函数返回值</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&gt; hn &lt;- hist(Nile)</div><div class="line">&gt; hn</div><div class="line">$breaks</div><div class="line"> [<span class="number">1</span>]  <span class="number">400</span>  <span class="number">500</span>  <span class="number">600</span>  <span class="number">700</span>  <span class="number">800</span>  <span class="number">900</span> <span class="number">1000</span> <span class="number">1100</span> <span class="number">1200</span> <span class="number">1300</span> <span class="number">1400</span></div><div class="line"></div><div class="line">$counts</div><div class="line"> [<span class="number">1</span>]  <span class="number">1</span>  <span class="number">0</span>  <span class="number">5</span> <span class="number">20</span> <span class="number">25</span> <span class="number">19</span> <span class="number">12</span> <span class="number">11</span>  <span class="number">6</span>  <span class="number">1</span></div><div class="line"></div><div class="line">$density</div><div class="line"> [<span class="number">1</span>] <span class="number">0.0001</span> <span class="number">0.0000</span> <span class="number">0.0005</span> <span class="number">0.0020</span> <span class="number">0.0025</span> <span class="number">0.0019</span> <span class="number">0.0012</span> <span class="number">0.0011</span> <span class="number">0.0006</span> <span class="number">0.0001</span></div><div class="line"></div><div class="line">$mids</div><div class="line"> [<span class="number">1</span>]  <span class="number">450</span>  <span class="number">550</span>  <span class="number">650</span>  <span class="number">750</span>  <span class="number">850</span>  <span class="number">950</span> <span class="number">1050</span> <span class="number">1150</span> <span class="number">1250</span> <span class="number">1350</span></div><div class="line"></div><div class="line">$xname</div><div class="line">[<span class="number">1</span>] <span class="string">"Nile"</span></div><div class="line"></div><div class="line">$equidist</div><div class="line">[<span class="number">1</span>] <span class="literal">TRUE</span></div><div class="line"></div><div class="line">attr(,<span class="string">"class"</span>)</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div></pre></td></tr></table></figure>
+<p>注意<code>attr</code>后面的内容，标志了hn的属性<em>histogram</em><br><br><br>也可使用<code>str()</code>输出列表，更为直观<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; str(hn)</div><div class="line">List of <span class="number">6</span></div><div class="line"> $ breaks  : int [<span class="number">1</span>:<span class="number">11</span>] <span class="number">400</span> <span class="number">500</span> <span class="number">600</span> <span class="number">700</span> <span class="number">800</span> <span class="number">900</span> <span class="number">1000</span> <span class="number">1100</span> <span class="number">1200</span> <span class="number">1300</span> <span class="keyword">...</span></div><div class="line"> $ counts  : int [<span class="number">1</span>:<span class="number">10</span>] <span class="number">1</span> <span class="number">0</span> <span class="number">5</span> <span class="number">20</span> <span class="number">25</span> <span class="number">19</span> <span class="number">12</span> <span class="number">11</span> <span class="number">6</span> <span class="number">1</span></div><div class="line"> $ density : num [<span class="number">1</span>:<span class="number">10</span>] <span class="number">0.0001</span> <span class="number">0</span> <span class="number">0.0005</span> <span class="number">0.002</span> <span class="number">0.0025</span> <span class="number">0.0019</span> <span class="number">0.0012</span> <span class="number">0.0011</span> <span class="number">0.0006</span> <span class="number">0.0001</span></div><div class="line"> $ mids    : num [<span class="number">1</span>:<span class="number">10</span>] <span class="number">450</span> <span class="number">550</span> <span class="number">650</span> <span class="number">750</span> <span class="number">850</span> <span class="number">950</span> <span class="number">1050</span> <span class="number">1150</span> <span class="number">1250</span> <span class="number">1350</span></div><div class="line"> $ xname   : chr <span class="string">"Nile"</span></div><div class="line"> $ equidist: logi <span class="literal">TRUE</span></div><div class="line"> - attr(*, <span class="string">"class"</span>)= chr <span class="string">"histogram"</span></div></pre></td></tr></table></figure></p>
+<h3 id="5-数据框-Data-Frame"><a href="#5-数据框-Data-Frame" class="headerlink" title="5. 数据框 Data Frame"></a>5. 数据框 Data Frame</h3><p>实际上是列表，只不过每个列表存储着一列向量。<br><code>data.frame</code>通常通过读取文件来创建，此处不再举例。</p>
+<h3 id="6-类"><a href="#6-类" class="headerlink" title="6. 类"></a>6. 类</h3><p>R语言是一门面向对象的编程语言。每一个对象都有其类别属性，R语言的泛型函数可以根据变量的类别来执行。<br>通过<code>class()</code>查看变量的类<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; hn &lt;- hist(Nile)</div><div class="line">&gt; class(hn)</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div></pre></td></tr></table></figure></p>
+<p><br><br>通过<code>attributes</code>查看变量的属性，可以直接使用<code>属性(变量)</code>语句<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; attributes(hn)</div><div class="line">$names</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div><div class="line"></div><div class="line">$class</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div><div class="line"></div><div class="line">&gt; names(hn)</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div></pre></td></tr></table></figure></p>
+<h2 id="总结变量（对象）的类型"><a href="#总结变量（对象）的类型" class="headerlink" title="总结变量（对象）的类型"></a>总结变量（对象）的类型</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt; m &lt;- rbind(rnorm(<span class="number">2</span>), rnorm(<span class="number">2</span>))</div><div class="line">&gt; m</div><div class="line">           [,<span class="number">1</span>]       [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,] <span class="number">0.07614777</span> <span class="number">0.26227249</span></div><div class="line">[<span class="number">2</span>,] <span class="number">0.81721921</span> <span class="number">0.05898863</span></div><div class="line">&gt; typeof(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"double"</span></div><div class="line">&gt; mode(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"numeric"</span></div><div class="line">&gt; attributes(m)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div><div class="line"></div><div class="line">&gt; class(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div></pre></td></tr></table></figure>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://han.com/2017/10/25/biaoti/" data-id="cj97662aw0000b7pjkrokurek" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/25/template/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
   
-    <a href="/2017/10/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+  </article>
 
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li></ul>
+    <div class="post-spread">
+      
     </div>
   </div>
 
 
+          </div>
+          
+
+
+          
+
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
+
+
+
+        </div>
         
-          <li>
-            <a href="/2017/10/25/biaoti/">biaoti</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/25/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
-</aside>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Han</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#R语言函数的变量作用域"><span class="nav-number">1.</span> <span class="nav-text">R语言函数的变量作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量"><span class="nav-number">1.1.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-number">1.2.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认参数"><span class="nav-number">1.3.</span> <span class="nav-text">默认参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R语言的数据结构"><span class="nav-number">2.</span> <span class="nav-text">R语言的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-向量-Vector"><span class="nav-number">2.1.</span> <span class="nav-text">1. 向量 Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串-Character"><span class="nav-number">2.2.</span> <span class="nav-text">2. 字符串 Character</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串连接与分割"><span class="nav-number">2.2.1.</span> <span class="nav-text">字符串连接与分割</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-矩阵"><span class="nav-number">2.3.</span> <span class="nav-text">3. 矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-列表-List"><span class="nav-number">2.4.</span> <span class="nav-text">4. 列表 List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建列表"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表作为函数返回值"><span class="nav-number">2.4.2.</span> <span class="nav-text">列表作为函数返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-数据框-Data-Frame"><span class="nav-number">2.5.</span> <span class="nav-text">5. 数据框 Data Frame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-类"><span class="nav-number">2.6.</span> <span class="nav-text">6. 类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结变量（对象）的类型"><span class="nav-number">3.</span> <span class="nav-text">总结变量（对象）的类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Han</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Han<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
