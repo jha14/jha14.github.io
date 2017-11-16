@@ -273,7 +273,7 @@
             "@type": "ImageObject",
             "url": "/img/ic_face_black_48dp_2x.png"
         },
-        "description": "Study hard, play hard..."
+        "description": "Mining biological data..."
     },
     "publisher": {
         "@type": "Organization",
@@ -414,6 +414,18 @@
     -->
 
     <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=http://han.com/2017/10/25/template的副本/&chld=M|2">
+    
+</ul>
+
     
 
     <!-- Tags (bookmark) -->
@@ -577,7 +589,7 @@
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="#" target="_blank" title="Email Me">
+                    <a href="mailto: h.jin@maastrichtuniversity.nl" target="_blank" title="Email Me">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
@@ -598,6 +610,8 @@
                 Home
             </a>
         </li>
+        
+            <li class="divider"></li>
         
     
 
@@ -620,6 +634,21 @@
     
 
     <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/R-PROGRAMMING/">R PROGRAMMING<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/RESEARCH/">RESEARCH<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
     
 
     <!-- Pages  -->
@@ -735,7 +764,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Han's Blog
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Han's Blog
+            
+                <br>
+                
+                    Maastricht University, the Netherlands
+                
             
         </div>
 
