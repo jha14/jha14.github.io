@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://han.com">
+  <link rel="dns-prefetch" href="http://hanunimaas.com">
   <title>R语言学习（一）入门 | Han&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。此文以一个计算机专业人员的角度学习和使用R语言。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言学习（一）入门">
-<meta property="og:url" content="http://han.com/2017/10/26/R_programming_1/index.html">
+<meta property="og:url" content="http://hanunimaas.com/2017/10/26/R_programming_1/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。此文以一个计算机专业人员的角度学习和使用R语言。">
 <meta property="og:locale" content="en">
@@ -47,13 +47,11 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/blogImg/capture.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Han</a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Study Hard, Play Hard...</p>
 		
 
 		<nav class="header-menu">
@@ -61,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/photos">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -72,10 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -83,13 +77,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/jha14" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="mail" target="_blank" href="mailto:h.jin@maastrichtuniversity.nl" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="facebook" target="_blank" href="https://www.facebook.com/hanjinnku" title="facebook"><i class="icon-facebook"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/han-jin-0a3041102/" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
 			</div>
 		</nav>
@@ -107,13 +101,11 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/blogImg/capture.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Han</h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Study Hard, Play Hard...<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -126,13 +118,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/jha14" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="mail" target="_blank" href="mailto:h.jin@maastrichtuniversity.nl" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="facebook" target="_blank" href="https://www.facebook.com/hanjinnku" title="facebook"><i class="icon-facebook"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/han-jin-0a3041102/" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
 				</div>
 			</nav>
@@ -143,7 +135,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,162 +171,34 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。<br>此文以一个计算机专业人员的角度学习和使用R语言。<br><a id="more"></a></p>
-<h2 id="运行R程序"><a href="#运行R程序" class="headerlink" title="运行R程序"></a>运行R程序</h2><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><pre><code class="R">&gt; source(&quot;z.R&quot;)
-</code></pre>
-<h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><pre><code>$ R CMD BATCH z.R
-</code></pre><h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
-<pre><code class="R">&gt; x &lt;- 5
-&gt; f &lt;- function() x &lt;-4
-&gt; f()
-&gt; x
-[1] 5
-</code></pre>
+<h2 id="运行R程序"><a href="#运行R程序" class="headerlink" title="运行R程序"></a>运行R程序</h2><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; <span class="keyword">source</span>(<span class="string">"z.R"</span>)</div></pre></td></tr></table></figure>
+<h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><div class="line">$ R <span class="keyword">CMD</span><span class="bash"> BATCH z.R</span></div></pre></td></tr></table></figure>
+<h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">5</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>() x &lt;-<span class="number">4</span></div><div class="line">&gt; f()</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">5</span></div></pre></td></tr></table></figure>
 <h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数之外创建的变量，在函数内部也可以访问。<br>可以通过&lt;&lt;-在函数内部给全局变量赋值</p>
-<pre><code class="R">&gt; y &lt;- 4
-&gt; f &lt;- function(x) y &lt;&lt;- 3
-&gt; f()
-&gt; y
-[1] 3
-</code></pre>
-<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><pre><code class="R">&gt; g &lt;- function(x, y=2, z=T){...}
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- <span class="number">4</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>(x) y &lt;&lt;- <span class="number">3</span></div><div class="line">&gt; f()</div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="number">3</span></div></pre></td></tr></table></figure>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; g &lt;- <span class="keyword">function</span>(x, y=<span class="number">2</span>, z=<span class="literal">T</span>)&#123;<span class="keyword">...</span>&#125;</div></pre></td></tr></table></figure>
 <h2 id="R语言的数据结构"><a href="#R语言的数据结构" class="headerlink" title="R语言的数据结构"></a>R语言的数据结构</h2><h3 id="1-向量-Vector"><a href="#1-向量-Vector" class="headerlink" title="1. 向量 Vector"></a>1. 向量 Vector</h3><p>向量是R语言的核心。一个向量内部的数据类型是单一的，不可以由整数元素和字符串混合构成。<br>在R语言中即使单个的数实际上也是由向量所表示的</p>
-<pre><code class="R">&gt; x &lt;- 8
-&gt; x
-[1] 8
-</code></pre>
-<h3 id="2-字符串-Character"><a href="#2-字符串-Character" class="headerlink" title="2. 字符串 Character"></a>2. 字符串 Character</h3><pre><code class="R">&gt; y &lt;- &quot;abc&quot;
-&gt; y
-[1] &quot;abc&quot;
-&gt; length(y)
-[1] 1
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">8</span></div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">8</span></div></pre></td></tr></table></figure>
+<h3 id="2-字符串-Character"><a href="#2-字符串-Character" class="headerlink" title="2. 字符串 Character"></a>2. 字符串 Character</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- <span class="string">"abc"</span></div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span></div><div class="line">&gt; length(y)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span></div></pre></td></tr></table></figure>
 <h4 id="字符串连接与分割"><a href="#字符串连接与分割" class="headerlink" title="字符串连接与分割"></a>字符串连接与分割</h4><p>使用<code>paste</code>连接字符串，用<code>strsplit</code>分割字符串</p>
-<pre><code class="R">&gt; u &lt;- paste(&quot;abc&quot;, &quot;de&quot;, &quot;f&quot;)
-&gt; u
-[1] &quot;abc de f&quot;
-&gt; v &lt;- strsplit(u, &quot; &quot;)
-&gt; v
-[[1]]
-[1] &quot;abc&quot; &quot;de&quot;  &quot;f&quot;  
-
-&gt; v[[1]]
-[1] &quot;abc&quot; &quot;de&quot;  &quot;f&quot;  
-&gt;
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; u &lt;- paste(<span class="string">"abc"</span>, <span class="string">"de"</span>, <span class="string">"f"</span>)</div><div class="line">&gt; u</div><div class="line">[<span class="number">1</span>] <span class="string">"abc de f"</span></div><div class="line">&gt; v &lt;- strsplit(u, <span class="string">" "</span>)</div><div class="line">&gt; v</div><div class="line">[[<span class="number">1</span>]]</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span> <span class="string">"de"</span>  <span class="string">"f"</span>  </div><div class="line"></div><div class="line">&gt; v[[<span class="number">1</span>]]</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span> <span class="string">"de"</span>  <span class="string">"f"</span>  </div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <h3 id="3-矩阵-Matrix"><a href="#3-矩阵-Matrix" class="headerlink" title="3. 矩阵 Matrix"></a>3. 矩阵 Matrix</h3><p>也可以理解为按列存放的向量</p>
-<pre><code class="R">&gt; m &lt;- rbind(rnorm(2), rnorm(2))
-&gt; m
-           [,1]       [,2]
-[1,] 0.07614777 0.26227249
-[2,] 0.81721921 0.05898863
-&gt; m[3]
-[1] 0.2622725
-&gt;
-</code></pre>
-<h3 id="4-列表-List"><a href="#4-列表-List" class="headerlink" title="4. 列表 List"></a>4. 列表 List</h3><h4 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h4><pre><code class="R">&gt; x &lt;- list(u = 2, v = &quot;abc&quot;)
-&gt; x
-$u
-[1] 2
-
-$v
-[1] &quot;abc&quot;
-
-&gt; x$u
-[1] 2
-</code></pre>
-<h4 id="列表作为函数返回值"><a href="#列表作为函数返回值" class="headerlink" title="列表作为函数返回值"></a>列表作为函数返回值</h4><pre><code class="R">&gt; hn &lt;- hist(Nile)
-&gt; hn
-$breaks
- [1]  400  500  600  700  800  900 1000 1100 1200 1300 1400
-
-$counts
- [1]  1  0  5 20 25 19 12 11  6  1
-
-$density
- [1] 0.0001 0.0000 0.0005 0.0020 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
-
-$mids
- [1]  450  550  650  750  850  950 1050 1150 1250 1350
-
-$xname
-[1] &quot;Nile&quot;
-
-$equidist
-[1] TRUE
-
-attr(,&quot;class&quot;)
-[1] &quot;histogram&quot;
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; m &lt;- rbind(rnorm(<span class="number">2</span>), rnorm(<span class="number">2</span>))</div><div class="line">&gt; m</div><div class="line">           [,<span class="number">1</span>]       [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,] <span class="number">0.07614777</span> <span class="number">0.26227249</span></div><div class="line">[<span class="number">2</span>,] <span class="number">0.81721921</span> <span class="number">0.05898863</span></div><div class="line">&gt; m[<span class="number">3</span>]</div><div class="line">[<span class="number">1</span>] <span class="number">0.2622725</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h3 id="4-列表-List"><a href="#4-列表-List" class="headerlink" title="4. 列表 List"></a>4. 列表 List</h3><h4 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h4><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- list(u = <span class="number">2</span>, v = <span class="string">"abc"</span>)</div><div class="line">&gt; x</div><div class="line">$u</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div><div class="line"></div><div class="line">$v</div><div class="line">[<span class="number">1</span>] <span class="string">"abc"</span></div><div class="line"></div><div class="line">&gt; x$u</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div></pre></td></tr></table></figure>
+<h4 id="列表作为函数返回值"><a href="#列表作为函数返回值" class="headerlink" title="列表作为函数返回值"></a>列表作为函数返回值</h4><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; hn &lt;- hist(Nile)</div><div class="line">&gt; hn</div><div class="line">$breaks</div><div class="line"> [<span class="number">1</span>]  <span class="number">400</span>  <span class="number">500</span>  <span class="number">600</span>  <span class="number">700</span>  <span class="number">800</span>  <span class="number">900</span> <span class="number">1000</span> <span class="number">1100</span> <span class="number">1200</span> <span class="number">1300</span> <span class="number">1400</span></div><div class="line"></div><div class="line">$counts</div><div class="line"> [<span class="number">1</span>]  <span class="number">1</span>  <span class="number">0</span>  <span class="number">5</span> <span class="number">20</span> <span class="number">25</span> <span class="number">19</span> <span class="number">12</span> <span class="number">11</span>  <span class="number">6</span>  <span class="number">1</span></div><div class="line"></div><div class="line">$density</div><div class="line"> [<span class="number">1</span>] <span class="number">0.0001</span> <span class="number">0.0000</span> <span class="number">0.0005</span> <span class="number">0.0020</span> <span class="number">0.0025</span> <span class="number">0.0019</span> <span class="number">0.0012</span> <span class="number">0.0011</span> <span class="number">0.0006</span> <span class="number">0.0001</span></div><div class="line"></div><div class="line">$mids</div><div class="line"> [<span class="number">1</span>]  <span class="number">450</span>  <span class="number">550</span>  <span class="number">650</span>  <span class="number">750</span>  <span class="number">850</span>  <span class="number">950</span> <span class="number">1050</span> <span class="number">1150</span> <span class="number">1250</span> <span class="number">1350</span></div><div class="line"></div><div class="line">$xname</div><div class="line">[<span class="number">1</span>] <span class="string">"Nile"</span></div><div class="line"></div><div class="line">$equidist</div><div class="line">[<span class="number">1</span>] <span class="literal">TRUE</span></div><div class="line"></div><div class="line">attr(,<span class="string">"class"</span>)</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div></pre></td></tr></table></figure>
 <p>注意<code>attr</code>后面的内容，标志了hn的属性<em>histogram</em><br><br><br>也可使用<code>str()</code>输出列表，更为直观</p>
-<pre><code class="R">&gt; str(hn)
-List of 6
- $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
- $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
- $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
- $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
- $ xname   : chr &quot;Nile&quot;
- $ equidist: logi TRUE
- - attr(*, &quot;class&quot;)= chr &quot;histogram&quot;
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; str(hn)</div><div class="line">List of <span class="number">6</span></div><div class="line"> $ breaks  : int [<span class="number">1</span>:<span class="number">11</span>] <span class="number">400</span> <span class="number">500</span> <span class="number">600</span> <span class="number">700</span> <span class="number">800</span> <span class="number">900</span> <span class="number">1000</span> <span class="number">1100</span> <span class="number">1200</span> <span class="number">1300</span> <span class="keyword">...</span></div><div class="line"> $ counts  : int [<span class="number">1</span>:<span class="number">10</span>] <span class="number">1</span> <span class="number">0</span> <span class="number">5</span> <span class="number">20</span> <span class="number">25</span> <span class="number">19</span> <span class="number">12</span> <span class="number">11</span> <span class="number">6</span> <span class="number">1</span></div><div class="line"> $ density : num [<span class="number">1</span>:<span class="number">10</span>] <span class="number">0.0001</span> <span class="number">0</span> <span class="number">0.0005</span> <span class="number">0.002</span> <span class="number">0.0025</span> <span class="number">0.0019</span> <span class="number">0.0012</span> <span class="number">0.0011</span> <span class="number">0.0006</span> <span class="number">0.0001</span></div><div class="line"> $ mids    : num [<span class="number">1</span>:<span class="number">10</span>] <span class="number">450</span> <span class="number">550</span> <span class="number">650</span> <span class="number">750</span> <span class="number">850</span> <span class="number">950</span> <span class="number">1050</span> <span class="number">1150</span> <span class="number">1250</span> <span class="number">1350</span></div><div class="line"> $ xname   : chr <span class="string">"Nile"</span></div><div class="line"> $ equidist: logi <span class="literal">TRUE</span></div><div class="line"> - attr(*, <span class="string">"class"</span>)= chr <span class="string">"histogram"</span></div></pre></td></tr></table></figure>
 <h3 id="5-数据框-Data-Frame"><a href="#5-数据框-Data-Frame" class="headerlink" title="5. 数据框 Data Frame"></a>5. 数据框 Data Frame</h3><p>实际上是列表，只不过每个列表存储着一列向量。<br><code>data.frame</code>通常通过读取文件来创建，此处不再举例。</p>
 <h3 id="6-类-Class"><a href="#6-类-Class" class="headerlink" title="6. 类 Class"></a>6. 类 Class</h3><p>R语言是一门面向对象的编程语言。每一个对象都有其类别属性，R语言的泛型函数可以根据变量的类别来执行。<br>通过<code>class()</code>查看变量的类</p>
-<pre><code class="R">&gt; hn &lt;- hist(Nile)
-&gt; class(hn)
-[1] &quot;histogram&quot;
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; hn &lt;- hist(Nile)</div><div class="line">&gt; class(hn)</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div></pre></td></tr></table></figure>
 <p><br><br>通过<code>attributes()</code>查看变量的属性，可以直接使用<code>属性(变量)</code>语句</p>
-<pre><code class="R">&gt; attributes(hn)
-$names
-[1] &quot;breaks&quot;   &quot;counts&quot;   &quot;density&quot;  &quot;mids&quot;     &quot;xname&quot;    &quot;equidist&quot;
-
-$class
-[1] &quot;histogram&quot;
-
-&gt; names(hn)
-[1] &quot;breaks&quot;   &quot;counts&quot;   &quot;density&quot;  &quot;mids&quot;     &quot;xname&quot;    &quot;equidist&quot;
-</code></pre>
-<h2 id="总结变量（对象）的类型"><a href="#总结变量（对象）的类型" class="headerlink" title="总结变量（对象）的类型"></a>总结变量（对象）的类型</h2><pre><code class="R">&gt; m &lt;- rbind(rnorm(2), rnorm(2))
-&gt; m
-           [,1]       [,2]
-[1,] 0.07614777 0.26227249
-[2,] 0.81721921 0.05898863
-&gt; typeof(m)
-[1] &quot;double&quot;
-&gt; mode(m)
-[1] &quot;numeric&quot;
-&gt; attributes(m)
-$dim
-[1] 2 2
-
-&gt; class(m)
-[1] &quot;matrix&quot;
-</code></pre>
-<h2 id="清空环境变量"><a href="#清空环境变量" class="headerlink" title="清空环境变量"></a>清空环境变量</h2><pre><code>rm(list = ls())
-</code></pre>
-      
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; attributes(hn)</div><div class="line">$names</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div><div class="line"></div><div class="line">$class</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div><div class="line"></div><div class="line">&gt; names(hn)</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div></pre></td></tr></table></figure>
+<h2 id="总结变量（对象）的类型"><a href="#总结变量（对象）的类型" class="headerlink" title="总结变量（对象）的类型"></a>总结变量（对象）的类型</h2><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; m &lt;- rbind(rnorm(<span class="number">2</span>), rnorm(<span class="number">2</span>))</div><div class="line">&gt; m</div><div class="line">           [,<span class="number">1</span>]       [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,] <span class="number">0.07614777</span> <span class="number">0.26227249</span></div><div class="line">[<span class="number">2</span>,] <span class="number">0.81721921</span> <span class="number">0.05898863</span></div><div class="line">&gt; typeof(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"double"</span></div><div class="line">&gt; mode(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"numeric"</span></div><div class="line">&gt; attributes(m)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div><div class="line"></div><div class="line">&gt; class(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div></pre></td></tr></table></figure>
+<h2 id="清空环境变量"><a href="#清空环境变量" class="headerlink" title="清空环境变量"></a>清空环境变量</h2><figure class="highlight lisp"><table><tr><td class="code"><pre><div class="line">rm(<span class="name">list</span> = ls())</div></pre></td></tr></table></figure>
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -401,7 +265,7 @@ $dim
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://han.com/2017/10/26/R_programming_1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hanunimaas.com/2017/10/26/R_programming_1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -513,25 +377,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -595,43 +451,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">PhD student at Maastricht University&lt;br&gt;&lt;br&gt;Maastricht, the Netherlands&lt;br&gt;&lt;br&gt;Former Internship at HZI&lt;br&gt;&lt;br&gt;Braunschweig, Germany&lt;br&gt;&lt;br&gt;Master&#39;s Degree from Nankai University&lt;br&gt;&lt;br&gt;Tianjin, China&lt;br&gt;&lt;br&gt;Machine Learning, Bioinformatics&lt;br&gt;&lt;br&gt;From Tianjin, China</div>
   	  	
     	</section>
     

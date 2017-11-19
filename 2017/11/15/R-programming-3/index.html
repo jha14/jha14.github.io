@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://han.com">
+  <link rel="dns-prefetch" href="http://hanunimaas.com">
   <title>R语言学习（三）矩阵 | Han&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="第三章——矩阵">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言学习（三）矩阵">
-<meta property="og:url" content="http://han.com/2017/11/15/R-programming-3/index.html">
+<meta property="og:url" content="http://hanunimaas.com/2017/11/15/R-programming-3/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="第三章——矩阵">
 <meta property="og:locale" content="en">
@@ -47,13 +47,11 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/blogImg/capture.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Han</a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Study Hard, Play Hard...</p>
 		
 
 		<nav class="header-menu">
@@ -61,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/photos">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -72,10 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -83,13 +77,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/jha14" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="mail" target="_blank" href="mailto:h.jin@maastrichtuniversity.nl" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="facebook" target="_blank" href="https://www.facebook.com/hanjinnku" title="facebook"><i class="icon-facebook"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/han-jin-0a3041102/" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
 			</div>
 		</nav>
@@ -107,13 +101,11 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/blogImg/capture.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Han</h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Study Hard, Play Hard...<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -126,13 +118,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/jha14" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="mail" target="_blank" href="mailto:h.jin@maastrichtuniversity.nl" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="facebook" target="_blank" href="https://www.facebook.com/hanjinnku" title="facebook"><i class="icon-facebook"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/han-jin-0a3041102/" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
 				</div>
 			</nav>
@@ -143,7 +135,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -181,89 +173,28 @@
         <p>第三章——矩阵<br><a id="more"></a></p>
 <p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。</p>
 <h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><p>矩阵相当于按列存储一个向量，但是实际也存在矩阵类(matrix class)。<br>其中nrow或者ncol只给出一个参数也可以创建向量。</p>
-<pre><code class="R">&gt; y &lt;- matrix(c(1:4), nrow = 2, ncol = 2)
-&gt; y
-     [,1] [,2]
-[1,]    1    3
-[2,]    2    4
-&gt; which(y&gt;2)        #矩阵的按列存储性质
-[1] 3 4
-&gt; class(y)
-[1] &quot;matrix&quot;
-&gt; attributes(y)
-$dim
-[1] 2 2
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- matrix(c(<span class="number">1</span>:<span class="number">4</span>), nrow = <span class="number">2</span>, ncol = <span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span></div><div class="line">&gt; which(y&gt;<span class="number">2</span>)		<span class="comment">#矩阵的按列存储性质</span></div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">4</span></div><div class="line">&gt; class(y)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div><div class="line">&gt; attributes(y)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div></pre></td></tr></table></figure>
 <p>或者先创建矩阵：</p>
-<pre><code class="R">&gt; y &lt;- matrix(nrow = 2, ncol = 2)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- matrix(nrow = <span class="number">2</span>, ncol = <span class="number">2</span>)</div></pre></td></tr></table></figure>
 <p>再为每一个元素赋值：<code>y[1,1] &lt;- 1</code>…</p>
 <p>也可以对矩阵的子矩阵进行赋值，假设y行数大于3：</p>
-<pre><code class="R">y[c(1,3),] &lt;- matrix(c(1,1,8,12), nrow = 2)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">y[c(<span class="number">1</span>,<span class="number">3</span>),] &lt;- matrix(c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">12</span>), nrow = <span class="number">2</span>)</div></pre></td></tr></table></figure>
 <p>此外，还可以用<code>rownames()</code>和<code>colnames()</code>给矩阵的行和列命名：</p>
-<pre><code class="R">&gt; colnames(y) = c(&#39;a&#39;,&#39;b&#39;)
-&gt; y
-     a b
-[1,] 1 3
-[2,] 2 4
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; colnames(y) = c(<span class="string">'a'</span>,<span class="string">'b'</span>)</div><div class="line">&gt; y</div><div class="line">     a b</div><div class="line">[<span class="number">1</span>,] <span class="number">1</span> <span class="number">3</span></div><div class="line">[<span class="number">2</span>,] <span class="number">2</span> <span class="number">4</span></div></pre></td></tr></table></figure>
 <p>用<code>nrow()</code>和<code>ncol()</code>访问矩阵的行数和列数。</p>
 <h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><h3 id="加减乘除"><a href="#加减乘除" class="headerlink" title="加减乘除"></a>加减乘除</h3><p>矩阵乘法（线性代数意义上的乘法）</p>
-<pre><code class="R">&gt; y %*% y
-     [,1] [,2]
-[1,]    7   15
-[2,]   10   22
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y %*% y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">7</span>   <span class="number">15</span></div><div class="line">[<span class="number">2</span>,]   <span class="number">10</span>   <span class="number">22</span></div></pre></td></tr></table></figure>
 <p><code>y*3</code>代表矩阵每个元素都乘以3，而<code>y+y</code>代表矩阵每个位置对应的元素相加。</p>
-<h3 id="矩阵元素筛选"><a href="#矩阵元素筛选" class="headerlink" title="矩阵元素筛选"></a>矩阵元素筛选</h3><pre><code class="R">&gt; x &lt;- matrix(c(1:6), nrow = 3)
-&gt; x
-     [,1] [,2]
-[1,]    1    4
-[2,]    2    5
-[3,]    3    6
-&gt; x[x[,2] &gt;= 5,]
-     [,1] [,2]
-[1,]    2    5
-[2,]    3    6
-&gt;
-</code></pre>
+<h3 id="矩阵元素筛选"><a href="#矩阵元素筛选" class="headerlink" title="矩阵元素筛选"></a>矩阵元素筛选</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- matrix(c(<span class="number">1</span>:<span class="number">6</span>), nrow = <span class="number">3</span>)</div><div class="line">&gt; x</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">4</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">5</span></div><div class="line">[<span class="number">3</span>,]    <span class="number">3</span>    <span class="number">6</span></div><div class="line">&gt; x[x[,<span class="number">2</span>] &gt;= <span class="number">5</span>,]</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">2</span>    <span class="number">5</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">3</span>    <span class="number">6</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <p>先选出矩阵第二列大于5的元素，然后再将布尔向量应用到原矩阵中，选择出第2和3行。</p>
 <p>另外一种选择方法：</p>
-<pre><code class="R">&gt; x[x[,1] &gt; 1 &amp; x[,2] &gt; 5,]
-[1] 3 6
-&gt; x[,1]&gt;1
-[1] FALSE  TRUE  TRUE
-&gt; x[,2] &gt; 5
-[1] FALSE FALSE  TRUE
-&gt; x[,1] &gt; 1 &amp; x[,2] &gt; 5
-[1] FALSE FALSE  TRUE
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x[x[,<span class="number">1</span>] &gt; <span class="number">1</span> &amp; x[,<span class="number">2</span>] &gt; <span class="number">5</span>,]</div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">6</span></div><div class="line">&gt; x[,<span class="number">1</span>]&gt;<span class="number">1</span></div><div class="line">[<span class="number">1</span>] <span class="literal">FALSE</span>  <span class="literal">TRUE</span>  <span class="literal">TRUE</span></div><div class="line">&gt; x[,<span class="number">2</span>] &gt; <span class="number">5</span></div><div class="line">[<span class="number">1</span>] <span class="literal">FALSE</span> <span class="literal">FALSE</span>  <span class="literal">TRUE</span></div><div class="line">&gt; x[,<span class="number">1</span>] &gt; <span class="number">1</span> &amp; x[,<span class="number">2</span>] &gt; <span class="number">5</span></div><div class="line">[<span class="number">1</span>] <span class="literal">FALSE</span> <span class="literal">FALSE</span>  <span class="literal">TRUE</span></div></pre></td></tr></table></figure>
 <p>用“与”运算符<code>&amp;</code>从矩阵中选出了第一列大于1并且第二列大于5的部分。</p>
 <p>要注意的是，如果只从矩阵提取一行，会自动变成向量。若仍想保留矩阵属性，需要使用<code>drop</code>参数。</p>
-<pre><code class="R">&gt; dim(x)
-[1] 3 2
-&gt; dim(x[,1])        #此时已经成为向量，没有dim属性
-NULL
-&gt; dim(x[,1, drop = F])
-[1] 3 1
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; dim(x)</div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">2</span></div><div class="line">&gt; dim(x[,<span class="number">1</span>])		<span class="comment">#此时已经成为向量，没有dim属性</span></div><div class="line"><span class="literal">NULL</span></div><div class="line">&gt; dim(x[,<span class="number">1</span>, drop = <span class="literal">F</span>])</div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">1</span></div></pre></td></tr></table></figure>
 <p>也可以用<code>as.matrix()</code>将向量转化为矩阵。</p>
 <h2 id="返回矩阵某元素的位置"><a href="#返回矩阵某元素的位置" class="headerlink" title="返回矩阵某元素的位置"></a>返回矩阵某元素的位置</h2><p>使用<code>row()</code>和<code>col()</code>函数查看矩阵中某元素的位置。在某些特殊情况下会用到，比如创建对称矩阵时：</p>
-<pre><code class="R">&gt; m &lt;- matrix(nrow = 4, ncol = 4)
-&gt; m &lt;- ifelse(row(m) == col(m), 1, 0.2)
-&gt; m
-     [,1] [,2] [,3] [,4]
-[1,]  1.0  0.2  0.2  0.2
-[2,]  0.2  1.0  0.2  0.2
-[3,]  0.2  0.2  1.0  0.2
-[4,]  0.2  0.2  0.2  1.0
-&gt; row(m)
-     [,1] [,2] [,3] [,4]
-[1,]    1    1    1    1
-[2,]    2    2    2    2
-[3,]    3    3    3    3
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; m &lt;- matrix(nrow = <span class="number">4</span>, ncol = <span class="number">4</span>)</div><div class="line">&gt; m &lt;- ifelse(row(m) == col(m), <span class="number">1</span>, <span class="number">0.2</span>)</div><div class="line">&gt; m</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]  <span class="number">1.0</span>  <span class="number">0.2</span>  <span class="number">0.2</span>  <span class="number">0.2</span></div><div class="line">[<span class="number">2</span>,]  <span class="number">0.2</span>  <span class="number">1.0</span>  <span class="number">0.2</span>  <span class="number">0.2</span></div><div class="line">[<span class="number">3</span>,]  <span class="number">0.2</span>  <span class="number">0.2</span>  <span class="number">1.0</span>  <span class="number">0.2</span></div><div class="line">[<span class="number">4</span>,]  <span class="number">0.2</span>  <span class="number">0.2</span>  <span class="number">0.2</span>  <span class="number">1.0</span></div><div class="line">&gt; row(m)</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">1</span>    <span class="number">1</span>    <span class="number">1</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">2</span>    <span class="number">2</span>    <span class="number">2</span></div><div class="line">[<span class="number">3</span>,]    <span class="number">3</span>    <span class="number">3</span>    <span class="number">3</span>    <span class="number">3</span></div></pre></td></tr></table></figure>
 <p>可以使对角线元素为1，其余元素为0.2。</p>
 <h2 id="apply函数"><a href="#apply函数" class="headerlink" title="apply函数"></a><code>apply</code>函数</h2><p><code>apply(m, dimcode, f, fargs)</code></p>
 <ul>
@@ -273,71 +204,14 @@ NULL
 <li><code>fargs</code>是函数的参数。<br>如果所调用的函数的返回值是一个包含k个元素的向量，那么<code>apply()</code>的结果就有k行。有时会引起矩阵的行列数的变化，需要运行后dim检查一下结果。</li>
 </ul>
 <h2 id="插入或删除矩阵的行或列"><a href="#插入或删除矩阵的行或列" class="headerlink" title="插入或删除矩阵的行或列"></a>插入或删除矩阵的行或列</h2><p>向量直接使用<code>c()</code>插入：</p>
-<pre><code class="R">&gt; x = c(1:7)
-&gt; x = c(x[1:3], 20, x[4:7])
-&gt; x
-[1]  1  2  3 20  4  5  6  7
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x = c(<span class="number">1</span>:<span class="number">7</span>)</div><div class="line">&gt; x = c(x[<span class="number">1</span>:<span class="number">3</span>], <span class="number">20</span>, x[<span class="number">4</span>:<span class="number">7</span>])</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>]  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span> <span class="number">20</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span></div></pre></td></tr></table></figure>
 <p>矩阵使用<code>cbind()</code>和<code>rbind()</code>插入列和行。<br>然而通过这两个函数若用于循环创建矩阵比较耗时，所以最好的办法是先定义好一个大矩阵然后再循环赋值。</p>
 <p>想要删除矩阵的行或列，可以通过重新索引矩阵某一部分的方式，或者比如使用<code>c(-1)</code>索引行或列今儿删除矩阵的第一行或列。</p>
 <h2 id="高维数组"><a href="#高维数组" class="headerlink" title="高维数组"></a>高维数组</h2><p>一个简单的例子，通过两个矩阵组成高维数组：</p>
-<pre><code class="R">&gt; x &lt;- matrix(c(1:12), nrow = 3)
-&gt; y &lt;- matrix(c(24:13), nrow = 3)
-&gt; x
-     [,1] [,2] [,3] [,4]
-[1,]    1    4    7   10
-[2,]    2    5    8   11
-[3,]    3    6    9   12
-&gt; y
-     [,1] [,2] [,3] [,4]
-[1,]   24   21   18   15
-[2,]   23   20   17   14
-[3,]   22   19   16   13
-&gt; tests &lt;- array(data = c(x, y), dim = c(3,4,2))    #创建高维数组，其中dim中的2代表数据共有两层(两个矩阵组成)
-&gt; dim(tests)        #维度由三个元素构成
-[1] 3 4 2
-&gt; tests
-, , 1
-
-     [,1] [,2] [,3] [,4]
-[1,]    1    4    7   10
-[2,]    2    5    8   11
-[3,]    3    6    9   12
-
-, , 2
-
-     [,1] [,2] [,3] [,4]
-[1,]   24   21   18   15
-[2,]   23   20   17   14
-[3,]   22   19   16   13
-
-&gt; tests[3,2,1]        #返回第一个矩阵中的第三行第二列的元素
-[1] 6
-</code></pre>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- matrix(c(<span class="number">1</span>:<span class="number">12</span>), nrow = <span class="number">3</span>)</div><div class="line">&gt; y &lt;- matrix(c(<span class="number">24</span>:<span class="number">13</span>), nrow = <span class="number">3</span>)</div><div class="line">&gt; x</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">4</span>    <span class="number">7</span>   <span class="number">10</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">5</span>    <span class="number">8</span>   <span class="number">11</span></div><div class="line">[<span class="number">3</span>,]    <span class="number">3</span>    <span class="number">6</span>    <span class="number">9</span>   <span class="number">12</span></div><div class="line">&gt; y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]   <span class="number">24</span>   <span class="number">21</span>   <span class="number">18</span>   <span class="number">15</span></div><div class="line">[<span class="number">2</span>,]   <span class="number">23</span>   <span class="number">20</span>   <span class="number">17</span>   <span class="number">14</span></div><div class="line">[<span class="number">3</span>,]   <span class="number">22</span>   <span class="number">19</span>   <span class="number">16</span>   <span class="number">13</span></div><div class="line">&gt; tests &lt;- array(data = c(x, y), dim = c(<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>))	<span class="comment">#创建高维数组，其中dim中的2代表数据共有两层(两个矩阵组成)</span></div><div class="line">&gt; dim(tests)		<span class="comment">#维度由三个元素构成</span></div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">4</span> <span class="number">2</span></div><div class="line">&gt; tests</div><div class="line">, , <span class="number">1</span></div><div class="line"></div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">4</span>    <span class="number">7</span>   <span class="number">10</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">5</span>    <span class="number">8</span>   <span class="number">11</span></div><div class="line">[<span class="number">3</span>,]    <span class="number">3</span>    <span class="number">6</span>    <span class="number">9</span>   <span class="number">12</span></div><div class="line"></div><div class="line">, , <span class="number">2</span></div><div class="line"></div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>]</div><div class="line">[<span class="number">1</span>,]   <span class="number">24</span>   <span class="number">21</span>   <span class="number">18</span>   <span class="number">15</span></div><div class="line">[<span class="number">2</span>,]   <span class="number">23</span>   <span class="number">20</span>   <span class="number">17</span>   <span class="number">14</span></div><div class="line">[<span class="number">3</span>,]   <span class="number">22</span>   <span class="number">19</span>   <span class="number">16</span>   <span class="number">13</span></div><div class="line"></div><div class="line">&gt; tests[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]		<span class="comment">#返回第一个矩阵中的第三行第二列的元素</span></div><div class="line">[<span class="number">1</span>] <span class="number">6</span></div></pre></td></tr></table></figure>
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -404,7 +278,7 @@ NULL
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://han.com/2017/11/15/R-programming-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hanunimaas.com/2017/11/15/R-programming-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -507,25 +381,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -589,43 +455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">PhD student at Maastricht University&lt;br&gt;&lt;br&gt;Maastricht, the Netherlands&lt;br&gt;&lt;br&gt;Former Internship at HZI&lt;br&gt;&lt;br&gt;Braunschweig, Germany&lt;br&gt;&lt;br&gt;Master&#39;s Degree from Nankai University&lt;br&gt;&lt;br&gt;Tianjin, China&lt;br&gt;&lt;br&gt;Machine Learning, Bioinformatics&lt;br&gt;&lt;br&gt;From Tianjin, China</div>
   	  	
     	</section>
     
