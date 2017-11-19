@@ -39,11 +39,11 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #a0cfe4"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/blogImg/capture.png" class="js-avatar">
+			<img src="/assets/blogImg/material-14.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Han</a></h1>
@@ -54,8 +54,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/photos">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -90,22 +88,20 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #a0cfe4"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/blogImg/capture.png" class="js-avatar">
+				<img src="/assets/blogImg/material-14.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Han</h1>
 			</hgroup>
 			
 			
-			
-				
 			
 				
 			
@@ -129,9 +125,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -307,7 +301,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/26/run-lemon-tree/">Running Lemon-Tree on Arg1.CD68 High-correlated Modules</a>
+      <a class="article-title" href="/2017/10/26/run-lemon-tree/">Running Lemon-Tree on Arg1.CD68 correlating Modules</a>
     </h1>
   
 
@@ -320,56 +314,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><ul>
-<li>For WGCNA: transcriptomics data with stable patients, same classification as Jan’s version.</li>
-<li>For Lemon-Tree: transcriptomics data with 7 modules on all patients. See the file arg1.cd68.stable.pdf.</li>
-<li>Modules: indianred3, lightslateblue, brown4, mediumpurple4, orangered1, yellowgreen, firebrick4.</li>
-<li>Preprocess: Scale the feature to standard normal distribution before running the Lemon-Tree program.</li>
-</ul>
-<h2 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h2><ol>
-<li>From WGCNA results on stable patients, select 7 interesting modules (5 positive correlation, 2 negative correlation to Arg1.CD68) including 1645 unique genes.</li>
-<li>From 1645 genes select candidate regulators according to GO annotation. 205 candidates were selected.<br>GO:0004871, signal transducer activity<br>GO:0000989, transcription factor activity, transcription factor binding</li>
-<li>Run Lemon-Tree on the 1645 genes with all stable and unstable patients. Clustering result of Lemon-Tree includes 36 clusters with 1456 genes.</li>
-<li>Assign 205 candidate regulators on 36 clusters. 100 highest assignments were selected. 35 of all clusters have regulators. 74 unique regulators were selected.<br>Frequency of regulators occurred more than one time: BRD7(3), ENY2(2), EVI2A(3), GPR65(3), GRN(4), HEYL(6), LANCL1(2), MAP4K4(2), NMI(3), RERE(2), ROR(2), SETD3(2), SS18L2(2), TGFB1I1(2), TOB1(2) </li>
-<li>GO enrichment analysis on the 35 clusters.</li>
-<li>Trace the genes back from WGCNA modules. Most of the genes gathering in one Lemon-Tree cluster are also belong to one WGCNA module.</li>
-<li>Calculate the genes to WGCNA eigengene. Regulator genes tend to have higher correlation to the corresponding WGCNA eigengene.</li>
-</ol>
-<h2 id="Possible-Improvements"><a href="#Possible-Improvements" class="headerlink" title="Possible Improvements"></a>Possible Improvements</h2><ol>
-<li>Check the regulators which regulate more than one cluster.</li>
-<li>Check the GO results to find interesting clusters.</li>
-<li>Add miRNA as regulators.</li>
-</ol>
-<h2 id="Variables-in-R"><a href="#Variables-in-R" class="headerlink" title="Variables in R"></a>Variables in R</h2><ul>
-<li><code>transcriptomics.stable</code>    #WGCNA data</li>
-<li><code>moduleColors.stable</code>    #WGCNA modules</li>
-<li><code>regulators.old</code>        # GO:0004871 &amp; GO:0000989 genes</li>
-<li><code>stable.arg1.modules</code>    #7 interesting modules</li>
-<li><code>stable.arg1.genes</code>    #selected genes from 7 modules</li>
-<li><code>arg1.transcriptomics.stableandunstable.scaled</code>        #scaled data for Lemon-Tree, 1645 genes</li>
-<li><code>ID.nodup/arg1.transcriptomics.IDs</code>    #ID information</li>
-<li><code>arg1.regulators.old</code>    #candidate regulators for 7 modules</li>
-<li><code>tight.clusters.su</code>    #Lemon-Tree clustering result, 1456 genes</li>
-<li><code>top.regs.su.old</code>        #top 100 regulator assignments</li>
-<li><code>reg.list.su.old</code>        #regulator list for output</li>
-<li><code>reg.gene.list.su.old</code>    $regulator and gene list for output</li>
-</ul>
-<h2 id="Lemon-Tree程序的基本步骤"><a href="#Lemon-Tree程序的基本步骤" class="headerlink" title="Lemon Tree程序的基本步骤"></a>Lemon Tree程序的基本步骤</h2><h3 id="ganesh"><a href="#ganesh" class="headerlink" title="ganesh"></a>ganesh</h3><p>通过gibbs sampling进行双向聚类：</p>
-<ol>
-<li>随机分配N个gene到K0个类，随机分配M个样本到Lk,0个样本类。</li>
-<li>N次循环，从某类中随机删除gene i，对每个类，以及i单独成为一类的情况，计算将i放入k中的贝叶斯概率。</li>
-<li>经过n次迭代得到稳定的聚类结果。</li>
-</ol>
-<h3 id="tight-cluster"><a href="#tight-cluster" class="headerlink" title="tight_cluster"></a>tight_cluster</h3><h3 id="regulators"><a href="#regulators" class="headerlink" title="regulators"></a>regulators</h3><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先要标准化 scale features</p>
-<p>其次要选择candidate regulator genes from GO annotation</p>
-<h2 id="相关文献-References"><a href="#相关文献-References" class="headerlink" title="相关文献 References"></a>相关文献 References</h2><ul>
-<li>Segal E, Shapira M, Regev A, Pe’er D, Botstein D, et al.(2003) <a href="https://www.nature.com/articles/ng1165" target="_blank" rel="external">Module networks: identifying regulatory modules and their condition-specific regulators from gene expression data</a>. Nature Genetics 34: 166–167.</li>
-<li>Bonnet E, Calzone L, Michoel T. (2015) <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003983" target="_blank" rel="external">Integrative multi-omics module network inference with Lemon-Tree</a>. PLoS Comput Biol 11(2): e1003983.</li>
-<li>Joshi A, Van de Peer Y, Michoel T (2008) <a href="https://academic.oup.com/bioinformatics/article/24/2/176/2748127/Analysis-of-a-Gibbs-sampler-method-for-model-based" target="_blank" rel="external">Analysis of a Gibbs sampler for model based clustering of gene expression data</a>. Bioinformatics 24: 176–183.</li>
-<li>Joshi A, De Smet R, Marchal K,Van de Peer Y, Michoel T( 2009) <a href="https://academic.oup.com/bioinformatics/article/25/4/490/249900/Module-networks-revisited-computational-assessment" target="_blank" rel="external">Module networks revisited: computational assessment and prioritization of model predictions</a>. Bioinformatics 25: 490- 496.</li>
-</ul>
-
+        <p>This is to show how to run Lemon-Tree algorithm on our dataset.<br>
+        
+          <a class="article-more-a" href="/2017/10/26/run-lemon-tree/#more">more >></a>
+        
       
 
       
