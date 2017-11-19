@@ -11,17 +11,17 @@
     
     
     
-    <meta name="description" content="第二章——向量">
+    <meta name="description" content="第二章——向量 向量是R语言中最基础也是最常用的数据结构。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="R语言学习（二）向量">
 <meta property="og:url" content="http://hanunimaas.com/2017/11/01/R-programming-2/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
-<meta property="og:description" content="第二章——向量">
+<meta property="og:description" content="第二章——向量 向量是R语言中最基础也是最常用的数据结构。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-16T11:00:49.298Z">
+<meta property="og:updated_time" content="2017-11-19T18:45:21.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（二）向量">
-<meta name="twitter:description" content="第二章——向量">
+<meta name="twitter:description" content="第二章——向量 向量是R语言中最基础也是最常用的数据结构。">
     
     
         
@@ -242,7 +242,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>第二章——向量<br><a id="more"></a></p>
+            <p>第二章——向量</p>
+<p>向量是R语言中最基础也是最常用的数据结构。<br><a id="more"></a></p>
 <h2 id="向量性质"><a href="#向量性质" class="headerlink" title="向量性质"></a>向量性质</h2><p>可以用<code>c()</code>添加和合并向量。<br>矩阵为按列存储的向量。<br>尽量避免使用<code>for(i in 1:inlength(x))</code>在循环中，因为<code>length(x)</code>有可能为0<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c()</div><div class="line">&gt; x</div><div class="line"><span class="literal">NULL</span></div><div class="line">&gt; <span class="number">1</span>:length(x)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">0</span></div></pre></td></tr></table></figure></p>
 <h2 id="声明向量"><a href="#声明向量" class="headerlink" title="声明向量"></a>声明向量</h2><p>向量不需要声明，可以直接赋值。<br>先创建向量再赋值的例子<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- vector(length=<span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="literal">FALSE</span> <span class="literal">FALSE</span></div><div class="line">&gt; y[<span class="number">1</span>] &lt;- <span class="number">5</span></div><div class="line">&gt; y[<span class="number">2</span>] &lt;- <span class="number">12</span></div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>]  <span class="number">5</span> <span class="number">12</span></div></pre></td></tr></table></figure></p>
 <h2 id="循环补齐"><a href="#循环补齐" class="headerlink" title="循环补齐"></a>循环补齐</h2><p>在对两个向量运算时，如果要求这两个向量具有相同长度，则较短的向量会被循环补齐。<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>) + c(<span class="number">6</span>,<span class="number">0</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="number">22</span>)</div><div class="line">[<span class="number">1</span>]  <span class="number">7</span>  <span class="number">2</span> <span class="number">13</span> <span class="number">21</span> <span class="number">24</span></div><div class="line">Warning message:</div><div class="line">In c(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>) + c(<span class="number">6</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">20</span>, <span class="number">22</span>) :</div><div class="line">  longer object length is not a multiple of shorter object length</div></pre></td></tr></table></figure></p>
@@ -605,7 +606,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>第二章——向量<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>第二章——向量</p>
+<p>向量是R语言中最基础也是最常用的数据结构。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -624,7 +626,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵</p>
+<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -643,7 +646,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="思考篇"><a href="#思考篇" class="headerlink" title="思考篇"></a>思考篇</h2><h3 id="摄影中的主观创造"><a href="#摄影中的主观创造" class="headerlink" title="摄影中的主观创造"></a>摄影中的主观创造</h3><p>一幅照片，展示的是摄影师想让你看到的角度。这个时间和空间的截片，不是简单地对真实世界的记录和如明信片的景点介绍，而是情绪的表达，是摄影师心中的风景。它强调的是按下快门那一瞬间最能打动摄影师内心的景物，也是摄影师的创造力和艺术沉淀的综合体现。拍摄显而易见的客观景物本身只是记录和搬运美景，发现摄影师独特的主观视角才是艺术创作。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -653,7 +656,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://hanunimaas.com/2017/11/19/yunman-photography-2/">
-                            <h3 class="media-heading">《极致之美》读书笔记（一）</h3>
+                            <h3 class="media-heading">《极致之美》读书笔记（二）</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
@@ -662,7 +665,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="器材和设备"><a href="#器材和设备" class="headerlink" title="器材和设备"></a>器材和设备</h3><h4 id="机身"><a href="#机身" class="headerlink" title="机身"></a>机身</h4><p>相对于大画幅和中画幅数码后背，135全画幅数码相机是画质、便携性和价格的完美结合点。APS-C画幅具有体积小，价格相对低廉的特点，虽然高感相比全画幅差距较大，但也基本能满足多数业余爱好者的需要。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

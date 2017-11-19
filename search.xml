@@ -3,9 +3,61 @@
   
     
     <entry>
-      <title><![CDATA[《极致之美》读书笔记（一）]]></title>
+      <title><![CDATA[《极致之美》读书笔记（二）]]></title>
       <url>/2017/11/19/yunman-photography-2/</url>
-      <content type="html"><![CDATA[<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2>]]></content>
+      <content type="html"><![CDATA[<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="器材和设备"><a href="#器材和设备" class="headerlink" title="器材和设备"></a>器材和设备</h3><h4 id="机身"><a href="#机身" class="headerlink" title="机身"></a>机身</h4><p>相对于大画幅和中画幅数码后背，135全画幅数码相机是画质、便携性和价格的完美结合点。APS-C画幅具有体积小，价格相对低廉的特点，虽然高感相比全画幅差距较大，但也基本能满足多数业余爱好者的需要。<br><a id="more"></a></p>
+<h4 id="镜头"><a href="#镜头" class="headerlink" title="镜头"></a>镜头</h4><p>变焦镜头比定焦镜头更方便，这一点在风光摄影中格外显著。</p>
+<ol>
+<li><p>超广角镜头（11~35mm）</p>
+<p> 风光摄影师主力镜头，能收下更多场景，而且还能强调前景，建立视觉纵深感。</p>
+</li>
+<li><p>广角和中焦镜头（35~70mm）</p>
+<p> 人文摄影师最喜欢。于风光摄影中，可以不用选择大口径光圈镜头，因为风光摄影通常只用f/8以下的光圈。</p>
+</li>
+<li><p>中长焦镜头（70mm以上）</p>
+<p> 可简化画面，获得干净的构图。此外，长焦镜头能压缩空间，让画面显得比较平面抽象。常用于拍摄风光小品。此类镜头依然不建议购买大口径光圈镜头。</p>
+</li>
+<li><p>特殊题材</p>
+<p> 星空摄影需要大光圈和超广角镜头。24mm有可能不够广，需要多张拼接。移轴镜头对建筑摄影师是不可或缺的，在风光摄影中可以避免透视变形，还能实现无变形拼图。</p>
+</li>
+</ol>
+<h4 id="支撑系统和其他附件"><a href="#支撑系统和其他附件" class="headerlink" title="支撑系统和其他附件"></a>支撑系统和其他附件</h4><ul>
+<li><p>三脚架</p>
+<p>  一方面可避免相机抖动，另一方面可帮助摄影师仔细研究构图，静下心来检查画面中的所有细节。</p>
+</li>
+<li><p>云台</p>
+<p>  球形云台操作起来比较快捷，好的云台有助于全景接片。</p>
+</li>
+<li><p>快装板</p>
+<p>  每一部机身和长焦镜头上都应该装有快装板。L形快装板方便竖排接片。    </p>
+</li>
+<li><p>滤镜系统</p>
+<p>  多用曝光合成技术代替渐变镜。ND和CPL目前还没发取代。多次曝光加堆栈技术可以在一定程度上模仿ND镜效果，但是局限性太大，拍摄浪花等动态场景也没有ND效果好。</p>
+</li>
+</ul>
+<p>此外还有摄影包，闪光灯等。</p>
+<h4 id="户外装备"><a href="#户外装备" class="headerlink" title="户外装备"></a>户外装备</h4><p>GPS，卫星通讯设备，登山杖，头等，帐篷，睡袋，烹饪装备，急救包，防熊喷雾等……</p>
+<h4 id="摄影app"><a href="#摄影app" class="headerlink" title="摄影app"></a>摄影app</h4><ol>
+<li><p>PlanIt! Pro: 可查看日出日落，月生月落，银河位置等等。还可以查看在地球上哪个位置的某一时刻会有物体挡住我们感兴趣的天体。</p>
+<p> <a href="https://www.youtube.com/user/yingwentech/videos" target="_blank" rel="external">PlanIt!教学视频</a></p>
+</li>
+<li><p>DOF Calculator: 一个景深计算程序。</p>
+</li>
+<li><p>Northern Eye: 预测北极光。</p>
+</li>
+</ol>
+<h4 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h4><p>在处理图像数据中，CPU和内存相对比较重要。此外，用NAS组磁盘阵列是确保数据安全的最好方式。任何时候，一定要保证图像数据至少有两份相同的拷贝位于不同的存储设备中。</p>
+<p>MacOS用户可以考虑使用Time Machine备份软件。Windows用户可以使用Allway Sync。</p>
+<p>异地存储是大型公司一定会采用的策略，可应对火灾、自然灾害等意外。</p>
+<h3 id="数码摄影后期的基本概念"><a href="#数码摄影后期的基本概念" class="headerlink" title="数码摄影后期的基本概念"></a>数码摄影后期的基本概念</h3><h4 id="文件格式"><a href="#文件格式" class="headerlink" title="文件格式"></a>文件格式</h4><p>raw格式拍片，方便后期。可无损调整白平衡，在不过曝的情况下减曝光不会损害画质。虽然对raw文件增加曝光会增加噪点，但是对现代多数相机来说，对白天的场景增加曝光，噪点和画质劣化在可以接受的范围内。</p>
+<p>jpeg格式：普通旅游者拍“到此一游”；抢时间出片的新闻记者；影室或照相馆中专业摄影师，在灯光精确控制的情况下，可直接jpeg出片。</p>
+<p>tiff格式：无损压缩，16位存储，还可以包括图层。在raw文件解码后并进行进一步后期调整时首选的格式。</p>
+<h4 id="色深"><a href="#色深" class="headerlink" title="色深"></a>色深</h4><p>使用16位RGB文件存储图像，以获得更多的色彩变化。特别是在天空、水面等色阶平滑过渡的地方，很多时候只要稍微加一点反差或者拉一点曲线就会出现色彩断层，此时16位文件可以有效缓解或避免这一问题。</p>
+<h4 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h4><p>原厂软件最准，但功能有限。</p>
+<p>使用Lightroom管理影像，对影像进行基本的调整。使用Photoshop进行复杂的后期调整。</p>
+<h4 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h4><p>拍摄——导入计算机——Lightroom处理——Photoshop处理——缩小或插值放大输出</p>
+<h4 id="ISO不变性"><a href="#ISO不变性" class="headerlink" title="ISO不变性"></a>ISO不变性</h4><p>如果一台相机提高ISO和后期提亮raw画面，对画质的损害如果几乎等同的话，称这台相机具有ISO不变性（ISOless或者ISOInvariance）。<br>现代相机，特别是索尼传感器的相机，基本具有ISO不变性。利用相机这个性质，可以在条件所限下用低ISO进行手持拍摄，或者用低ISO保持画面高光不过曝，然后通过后期提亮画面暗部，结果要好于直接增加ISO进行拍摄所得到的效果。在拍摄星空和银河的时候同样有用。星星具有丰富的颜色，用高ISO拍摄（ISO3200/6400, F/2.8, 30s）可能会过曝，前提欠曝后期提亮可避免这个问题。</p>
+]]></content>
       
         <categories>
             
@@ -19,7 +71,7 @@
     <entry>
       <title><![CDATA[《极致之美》读书笔记（一）]]></title>
       <url>/2017/11/19/yunman-photography-1/</url>
-      <content type="html"><![CDATA[<h2 id="思考篇"><a href="#思考篇" class="headerlink" title="思考篇"></a>思考篇</h2><h3 id="摄影中的主观创造"><a href="#摄影中的主观创造" class="headerlink" title="摄影中的主观创造"></a>摄影中的主观创造</h3><p>一幅照片，展示的是摄影师想让你看到的角度。这个时间和空间的截片，不是简单地对真实世界的记录和如明信片的景点介绍，而是情绪的表达，是摄影师心中的风景。它强调的是按下快门那一瞬间最能打动摄影师内心的景物，也是摄影师的创造力和艺术沉淀的综合体现。拍摄显而易见的客观景物本身只是记录和搬运美景，发现摄影师独特的主观视角才是艺术创作。</p>
+      <content type="html"><![CDATA[<h2 id="思考篇"><a href="#思考篇" class="headerlink" title="思考篇"></a>思考篇</h2><h3 id="摄影中的主观创造"><a href="#摄影中的主观创造" class="headerlink" title="摄影中的主观创造"></a>摄影中的主观创造</h3><p>一幅照片，展示的是摄影师想让你看到的角度。这个时间和空间的截片，不是简单地对真实世界的记录和如明信片的景点介绍，而是情绪的表达，是摄影师心中的风景。它强调的是按下快门那一瞬间最能打动摄影师内心的景物，也是摄影师的创造力和艺术沉淀的综合体现。拍摄显而易见的客观景物本身只是记录和搬运美景，发现摄影师独特的主观视角才是艺术创作。<br><a id="more"></a></p>
 <p>那些很容易到达的地方，比如已经修好的观景台等，你在这里拍摄，别人也可以很容易在这里拍摄。此为旅游者视角，本身并没有什么错。人们在一个地方修观景台的原因，多半是因为从那个角度看风景的角度最佳。一个摄影师的作品集里有一些这样的“经典构图”完全合理。</p>
 <blockquote>
 <p>而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。</p>
@@ -66,8 +118,8 @@
     <entry>
       <title><![CDATA[R语言学习（三）矩阵]]></title>
       <url>/2017/11/15/R-programming-3/</url>
-      <content type="html"><![CDATA[<p>第三章——矩阵<br><a id="more"></a></p>
-<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。</p>
+      <content type="html"><![CDATA[<p>第三章——矩阵</p>
+<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。<br><a id="more"></a></p>
 <h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><p>矩阵相当于按列存储一个向量，但是实际也存在矩阵类(matrix class)。<br>其中nrow或者ncol只给出一个参数也可以创建向量。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- matrix(c(<span class="number">1</span>:<span class="number">4</span>), nrow = <span class="number">2</span>, ncol = <span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span></div><div class="line">&gt; which(y&gt;<span class="number">2</span>)		<span class="comment">#矩阵的按列存储性质</span></div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">4</span></div><div class="line">&gt; class(y)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div><div class="line">&gt; attributes(y)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div></pre></td></tr></table></figure>
 <p>或者先创建矩阵：</p>
@@ -119,7 +171,8 @@
     <entry>
       <title><![CDATA[R语言学习（二）向量]]></title>
       <url>/2017/11/01/R-programming-2/</url>
-      <content type="html"><![CDATA[<p>第二章——向量<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<p>第二章——向量</p>
+<p>向量是R语言中最基础也是最常用的数据结构。<br><a id="more"></a></p>
 <h2 id="向量性质"><a href="#向量性质" class="headerlink" title="向量性质"></a>向量性质</h2><p>可以用<code>c()</code>添加和合并向量。<br>矩阵为按列存储的向量。<br>尽量避免使用<code>for(i in 1:inlength(x))</code>在循环中，因为<code>length(x)</code>有可能为0<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c()</div><div class="line">&gt; x</div><div class="line"><span class="literal">NULL</span></div><div class="line">&gt; <span class="number">1</span>:length(x)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">0</span></div></pre></td></tr></table></figure></p>
 <h2 id="声明向量"><a href="#声明向量" class="headerlink" title="声明向量"></a>声明向量</h2><p>向量不需要声明，可以直接赋值。<br>先创建向量再赋值的例子<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- vector(length=<span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="literal">FALSE</span> <span class="literal">FALSE</span></div><div class="line">&gt; y[<span class="number">1</span>] &lt;- <span class="number">5</span></div><div class="line">&gt; y[<span class="number">2</span>] &lt;- <span class="number">12</span></div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>]  <span class="number">5</span> <span class="number">12</span></div></pre></td></tr></table></figure></p>
 <h2 id="循环补齐"><a href="#循环补齐" class="headerlink" title="循环补齐"></a>循环补齐</h2><p>在对两个向量运算时，如果要求这两个向量具有相同长度，则较短的向量会被循环补齐。<br><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>) + c(<span class="number">6</span>,<span class="number">0</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="number">22</span>)</div><div class="line">[<span class="number">1</span>]  <span class="number">7</span>  <span class="number">2</span> <span class="number">13</span> <span class="number">21</span> <span class="number">24</span></div><div class="line">Warning message:</div><div class="line">In c(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>) + c(<span class="number">6</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">20</span>, <span class="number">22</span>) :</div><div class="line">  longer object length is not a multiple of shorter object length</div></pre></td></tr></table></figure></p>
