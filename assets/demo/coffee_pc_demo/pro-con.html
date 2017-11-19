@@ -25,7 +25,11 @@
     
     
         
+            <meta property="fb:admins" content="100002536474515" />
+        
     
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/c5b87fd529788a034c54cdd73dab7213?s=640"/>
     
     
     
@@ -43,6 +47,8 @@
 
 
     
+        
+    
 
 <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -55,6 +61,8 @@
                 href="#about">
         
         
+            <img class="header-picture" src="https://www.gravatar.com/avatar/c5b87fd529788a034c54cdd73dab7213?s=90" alt="Author&#39;s picture"/>
+        
         </a>
     
 </header>
@@ -62,8 +70,21 @@
             <!-- Define author's picture -->
 
 
+    
+
 <nav id="sidebar" data-behavior="1">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/c5b87fd529788a034c54cdd73dab7213?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Han</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>PhD student at Maastricht University</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -330,6 +351,14 @@
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/assets/demo/coffee_pc_demo/pro-con.html">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>
+        
         
         <li class="post-action">
             
@@ -363,22 +392,26 @@
         
 
 
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/c5b87fd529788a034c54cdd73dab7213?s=110" alt="Author&#39;s picture"/>
+        
             <h4 id="about-card-name">Han</h4>
         
-            <div id="about-card-bio"><p>phd student</p>
+            <div id="about-card-bio"><p>PhD student at Maastricht University</p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Machine Learning</p>
 
             </div>
         
@@ -386,7 +419,7 @@
             <div id="about-card-location">
                 <i class="fa fa-map-marker"></i>
                 <br/>
-                Maastricht, the Netherlands
+                the Netherlands
             </div>
         
     </div>
@@ -527,6 +560,13 @@
 
     
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var algoliaClient = algoliasearch('Z7A3XW4R2I', '12db1ad54372045549ef465881c17e743');
+        var algoliaIndex = algoliaClient.initIndex('my-hexo-blog');
+    </script>
 
     </body>
 </html>
