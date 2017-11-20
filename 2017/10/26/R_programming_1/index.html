@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。此文以一个计算机专业人员的角度学习和使用R语言。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-16T11:01:24.836Z">
+<meta property="og:updated_time" content="2017-11-20T10:41:41.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（一）入门">
 <meta name="twitter:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。此文以一个计算机专业人员的角度学习和使用R语言。">
@@ -254,7 +254,7 @@
         <div class="main-content-wrap">
             <p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。<br>此文以一个计算机专业人员的角度学习和使用R语言。<br><a id="more"></a></p>
 <h2 id="运行R程序"><a href="#运行R程序" class="headerlink" title="运行R程序"></a>运行R程序</h2><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; <span class="keyword">source</span>(<span class="string">"z.R"</span>)</div></pre></td></tr></table></figure>
-<h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><div class="line">$ R <span class="keyword">CMD</span><span class="bash"> BATCH z.R</span></div></pre></td></tr></table></figure>
+<h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ R CMD BATCH z.R</div></pre></td></tr></table></figure>
 <h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">5</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>() x &lt;-<span class="number">4</span></div><div class="line">&gt; f()</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">5</span></div></pre></td></tr></table></figure>
 <h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数之外创建的变量，在函数内部也可以访问。<br>可以通过&lt;&lt;-在函数内部给全局变量赋值</p>
@@ -277,7 +277,7 @@
 <p><br><br>通过<code>attributes()</code>查看变量的属性，可以直接使用<code>属性(变量)</code>语句</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; attributes(hn)</div><div class="line">$names</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div><div class="line"></div><div class="line">$class</div><div class="line">[<span class="number">1</span>] <span class="string">"histogram"</span></div><div class="line"></div><div class="line">&gt; names(hn)</div><div class="line">[<span class="number">1</span>] <span class="string">"breaks"</span>   <span class="string">"counts"</span>   <span class="string">"density"</span>  <span class="string">"mids"</span>     <span class="string">"xname"</span>    <span class="string">"equidist"</span></div></pre></td></tr></table></figure>
 <h2 id="总结变量（对象）的类型"><a href="#总结变量（对象）的类型" class="headerlink" title="总结变量（对象）的类型"></a>总结变量（对象）的类型</h2><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; m &lt;- rbind(rnorm(<span class="number">2</span>), rnorm(<span class="number">2</span>))</div><div class="line">&gt; m</div><div class="line">           [,<span class="number">1</span>]       [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,] <span class="number">0.07614777</span> <span class="number">0.26227249</span></div><div class="line">[<span class="number">2</span>,] <span class="number">0.81721921</span> <span class="number">0.05898863</span></div><div class="line">&gt; typeof(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"double"</span></div><div class="line">&gt; mode(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"numeric"</span></div><div class="line">&gt; attributes(m)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div><div class="line"></div><div class="line">&gt; class(m)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div></pre></td></tr></table></figure>
-<h2 id="清空环境变量"><a href="#清空环境变量" class="headerlink" title="清空环境变量"></a>清空环境变量</h2><figure class="highlight lisp"><table><tr><td class="code"><pre><div class="line">rm(<span class="name">list</span> = ls())</div></pre></td></tr></table></figure>
+<h2 id="清空环境变量"><a href="#清空环境变量" class="headerlink" title="清空环境变量"></a>清空环境变量</h2><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">rm(list = ls())</div></pre></td></tr></table></figure>
 
             
         </div>
@@ -290,7 +290,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/run-lemon-tree/"  data-tooltip="Running Lemon-Tree on Arg1.CD68 correlating Modules">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/run-lemon-tree/"  data-tooltip="Running Lemon-Tree on Arg1.CD68-correlated Modules">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -380,7 +380,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/run-lemon-tree/"  data-tooltip="Running Lemon-Tree on Arg1.CD68 correlating Modules">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/run-lemon-tree/"  data-tooltip="Running Lemon-Tree on Arg1.CD68-correlated Modules">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -588,7 +588,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://hanunimaas.com/2017/10/26/run-lemon-tree/">
-                            <h3 class="media-heading">Running Lemon-Tree on Arg1.CD68 correlating Modules</h3>
+                            <h3 class="media-heading">Running Lemon-Tree on Arg1.CD68-correlated Modules</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
