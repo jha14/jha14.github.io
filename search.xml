@@ -75,7 +75,8 @@
     <entry>
       <title><![CDATA[Astrophotography]]></title>
       <url>/2017/11/21/Astrophotography/</url>
-      <content type="html"><![CDATA[<!-- excerpt --><br><!-- toc --></p>
+      <content type="html"><![CDATA[<!-- excerpt --> 
+<!-- toc -->
 <h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><p>First, here is a quick guide to astrophotography:</p>
 <p><a href="http://www.lonelyspeck.com/wp-content/uploads/2014/01/nightscapes-quick-guide.pdf" target="_blank" rel="external">NIGHTSCAPES</a></p>
 <p>A comprehensive website for astrophotography:</p>
@@ -381,7 +382,7 @@
     <entry>
       <title><![CDATA[Running Lemon-Tree on Arg1.CD68-correlated Modules]]></title>
       <url>/2017/10/26/run-lemon-tree/</url>
-      <content type="html"><![CDATA[<p>This is to show how to run Lemon-Tree algorithm on our dataset.</p>
+      <content type="html"><![CDATA[<p>This is to show how to run Lemon-Tree algorithm on our dataset</p>
 <a id="more"></a>
 <!-- toc -->
 <h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><ul>
