@@ -13,17 +13,17 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="第三章——矩阵 矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。">
+    <meta name="description" content="第三章——矩阵">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="R语言学习（三）矩阵">
 <meta property="og:url" content="http://hanunimaas.com/2017/11/15/R-programming-3/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
-<meta property="og:description" content="第三章——矩阵 矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。">
+<meta property="og:description" content="第三章——矩阵">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-22T15:56:51.210Z">
+<meta property="og:updated_time" content="2017-11-22T16:06:08.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（三）矩阵">
-<meta name="twitter:description" content="第三章——矩阵 矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。">
+<meta name="twitter:description" content="第三章——矩阵">
     
     
         
@@ -256,7 +256,8 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>第三章——矩阵</p>
-<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。<br><a id="more"></a></p>
+<a id="more"></a>
+<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。</p>
 <h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><p>矩阵相当于按列存储一个向量，但是实际也存在矩阵类(matrix class)。<br>其中nrow或者ncol只给出一个参数也可以创建向量。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- matrix(c(<span class="number">1</span>:<span class="number">4</span>), nrow = <span class="number">2</span>, ncol = <span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span></div><div class="line">&gt; which(y&gt;<span class="number">2</span>)		<span class="comment">#矩阵的按列存储性质</span></div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">4</span></div><div class="line">&gt; class(y)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div><div class="line">&gt; attributes(y)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div></pre></td></tr></table></figure>
 <p>或者先创建矩阵：</p>
@@ -600,9 +601,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。</p>
-<p>目前比较流行的R语言学习书籍是《R语言实战》(<em>R in Action: Data Analysis and Graphic with R</em>)，此书易于上手，实例较多，适合非计算机专业人员学习使用。</p>
-<p>而本系列内容基于《R语言编程艺术》(<em>The Art of R Programming</em>)，目的是以一个计算机专业人员的角度学习使用R语言并深入理解R语言的机制。</p></div>
+                        <div class="media-content hide-xs font-merryweather"><p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -646,8 +645,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>第二章——向量</p>
-<p>向量是R语言中最基础也是最常用的数据结构。<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>第二章——向量</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -672,8 +670,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵</p>
-<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

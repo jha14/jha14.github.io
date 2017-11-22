@@ -194,7 +194,8 @@
       <title><![CDATA[R语言学习（三）矩阵]]></title>
       <url>/2017/11/15/R-programming-3/</url>
       <content type="html"><![CDATA[<p>第三章——矩阵</p>
-<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。<br><a id="more"></a></p>
+<a id="more"></a>
+<p>矩阵是一种特殊的向量，包含两个附加的属性：行数和列数。矩阵是数组的特例，数组可以大于两维，而矩阵只有两维。</p>
 <h2 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h2><p>矩阵相当于按列存储一个向量，但是实际也存在矩阵类(matrix class)。<br>其中nrow或者ncol只给出一个参数也可以创建向量。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- matrix(c(<span class="number">1</span>:<span class="number">4</span>), nrow = <span class="number">2</span>, ncol = <span class="number">2</span>)</div><div class="line">&gt; y</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">3</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">2</span>    <span class="number">4</span></div><div class="line">&gt; which(y&gt;<span class="number">2</span>)		<span class="comment">#矩阵的按列存储性质</span></div><div class="line">[<span class="number">1</span>] <span class="number">3</span> <span class="number">4</span></div><div class="line">&gt; class(y)</div><div class="line">[<span class="number">1</span>] <span class="string">"matrix"</span></div><div class="line">&gt; attributes(y)</div><div class="line">$dim</div><div class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span></div></pre></td></tr></table></figure>
 <p>或者先创建矩阵：</p>
@@ -247,7 +248,8 @@
       <title><![CDATA[R语言学习（二）向量]]></title>
       <url>/2017/11/01/R-programming-2/</url>
       <content type="html"><![CDATA[<p>第二章——向量</p>
-<p>向量是R语言中最基础也是最常用的数据结构。<br><a id="more"></a></p>
+<a id="more"></a>
+<p>向量是R语言中最基础也是最常用的数据结构。</p>
 <h2 id="向量性质"><a href="#向量性质" class="headerlink" title="向量性质"></a>向量性质</h2><p>可以用<code>c()</code>添加和合并向量。<br>矩阵为按列存储的向量。<br>尽量避免使用<code>for(i in 1:inlength(x))</code>在循环中，因为<code>length(x)</code>有可能为0：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c()</div><div class="line">&gt; x</div><div class="line"><span class="literal">NULL</span></div><div class="line">&gt; <span class="number">1</span>:length(x)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">0</span></div></pre></td></tr></table></figure>
 <h2 id="声明向量"><a href="#声明向量" class="headerlink" title="声明向量"></a>声明向量</h2><p>向量不需要声明，可以直接赋值。<br>先创建向量再赋值的例子：</p>
@@ -372,9 +374,9 @@
       <title><![CDATA[R语言学习（一）入门]]></title>
       <url>/2017/10/26/R_programming_1/</url>
       <content type="html"><![CDATA[<p><a href="https://cran.r-project.org" target="_blank" rel="external">R语言</a>免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。</p>
+<a id="more"></a>
 <p>目前比较流行的R语言学习书籍是《R语言实战》(<em>R in Action: Data Analysis and Graphic with R</em>)，此书易于上手，实例较多，适合非计算机专业人员学习使用。</p>
 <p>而本系列内容基于《R语言编程艺术》(<em>The Art of R Programming</em>)，目的是以一个计算机专业人员的角度学习使用R语言并深入理解R语言的机制。</p>
-<a id="more"></a>
 <h2 id="运行R程序"><a href="#运行R程序" class="headerlink" title="运行R程序"></a>运行R程序</h2><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; <span class="keyword">source</span>(<span class="string">"z.R"</span>)</div></pre></td></tr></table></figure>
 <h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ R CMD BATCH z.R</div></pre></td></tr></table></figure>
 <h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
