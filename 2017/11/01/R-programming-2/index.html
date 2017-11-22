@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="第二章——向量">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-22T16:05:56.711Z">
+<meta property="og:updated_time" content="2017-11-22T20:16:33.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（二）向量">
 <meta name="twitter:description" content="第二章——向量">
@@ -257,6 +257,7 @@
         <div class="main-content-wrap">
             <p>第二章——向量</p>
 <a id="more"></a>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#向量性质"><span class="toc-text">向量性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#声明向量"><span class="toc-text">声明向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环补齐"><span class="toc-text">循环补齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用向量运算"><span class="toc-text">常用向量运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用all-和any"><span class="toc-text">使用all()和any()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向量化运算符"><span class="toc-text">向量化运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺失值NA与NULL"><span class="toc-text">缺失值NA与NULL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#筛选"><span class="toc-text">筛选</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用运算符-比如-gt-返回的布尔值向量对向量元素进行筛选"><span class="toc-text">使用运算符(比如>)返回的布尔值向量对向量元素进行筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用subset-函数进行筛选"><span class="toc-text">使用subset()函数进行筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用which-函数找到满足条件元素所在的位置"><span class="toc-text">使用which()函数找到满足条件元素所在的位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向量化的ifelse-函数"><span class="toc-text">向量化的ifelse()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试向量相等"><span class="toc-text">测试向量相等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向量元素的名称"><span class="toc-text">向量元素的名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-的强制类型转换"><span class="toc-text">c()的强制类型转换</span></a></li></ol>
 <p>向量是R语言中最基础也是最常用的数据结构。</p>
 <h2 id="向量性质"><a href="#向量性质" class="headerlink" title="向量性质"></a>向量性质</h2><p>可以用<code>c()</code>添加和合并向量。<br>矩阵为按列存储的向量。<br>尽量避免使用<code>for(i in 1:inlength(x))</code>在循环中，因为<code>length(x)</code>有可能为0：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c()</div><div class="line">&gt; x</div><div class="line"><span class="literal">NULL</span></div><div class="line">&gt; <span class="number">1</span>:length(x)</div><div class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">0</span></div></pre></td></tr></table></figure>
@@ -281,7 +282,7 @@
 <h2 id="向量化运算符"><a href="#向量化运算符" class="headerlink" title="向量化运算符"></a>向量化运算符</h2><p>假设我们希望对向量x中每一个元素使用函数f()，很多情况下对x调用f()就可以完成。提高R代码执速度的有效方法之一是向量化，这意味着应用到向量上的函数实际上应用在其每一个元素上:</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; w &lt;- <span class="keyword">function</span>(x) <span class="keyword">return</span>(x+<span class="number">1</span>)</div><div class="line">&gt; w(c(<span class="number">5</span>,<span class="number">2</span>,<span class="number">8</span>))</div><div class="line">[<span class="number">1</span>] <span class="number">6</span> <span class="number">3</span> <span class="number">9</span></div><div class="line">&gt; sqrt(<span class="number">1</span>:<span class="number">8</span>)</div><div class="line">[<span class="number">1</span>] <span class="number">1.000000</span> <span class="number">1.414214</span> <span class="number">1.732051</span> <span class="number">2.000000</span> <span class="number">2.236068</span> <span class="number">2.449490</span> <span class="number">2.645751</span> <span class="number">2.828427</span></div></pre></td></tr></table></figure>
 <p><code>sapply(x,f)</code>对x的每一个元素使用函数f()，并将结果转化为矩阵:</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; z12 &lt;- <span class="keyword">function</span>(z) <span class="keyword">return</span>(c(z,z^<span class="number">2</span>))</div><div class="line">&gt; sapply(<span class="number">1</span>:<span class="number">8</span>, z12)</div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>] [,<span class="number">5</span>] [,<span class="number">6</span>] [,<span class="number">7</span>] [,<span class="number">8</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    <span class="number">5</span>    <span class="number">6</span>    <span class="number">7</span>    <span class="number">8</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">1</span>    <span class="number">4</span>    <span class="number">9</span>   <span class="number">16</span>   <span class="number">25</span>   <span class="number">36</span>   <span class="number">49</span>   <span class="number">64</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; z12 &lt;- <span class="keyword">function</span>(z) <span class="keyword">return</span>(c(z,z^<span class="number">2</span>))	<span class="comment">#函数返回向量</span></div><div class="line">&gt; &gt; z12(<span class="number">1</span>:<span class="number">8</span>)		<span class="comment">#直接将函数应用在向量上，返回一个更长的向量</span></div><div class="line"> [<span class="number">1</span>]  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">1</span>  <span class="number">4</span>  <span class="number">9</span> <span class="number">16</span> <span class="number">25</span> <span class="number">36</span> <span class="number">49</span> <span class="number">64</span></div><div class="line">&gt; sapply(<span class="number">1</span>:<span class="number">8</span>, z12)		<span class="comment">#使用sapply返回矩阵，矩阵每一列为对向量单个元素执行函数返回的结果</span></div><div class="line">     [,<span class="number">1</span>] [,<span class="number">2</span>] [,<span class="number">3</span>] [,<span class="number">4</span>] [,<span class="number">5</span>] [,<span class="number">6</span>] [,<span class="number">7</span>] [,<span class="number">8</span>]</div><div class="line">[<span class="number">1</span>,]    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    <span class="number">5</span>    <span class="number">6</span>    <span class="number">7</span>    <span class="number">8</span></div><div class="line">[<span class="number">2</span>,]    <span class="number">1</span>    <span class="number">4</span>    <span class="number">9</span>   <span class="number">16</span>   <span class="number">25</span>   <span class="number">36</span>   <span class="number">49</span>   <span class="number">64</span></div></pre></td></tr></table></figure>
 <h2 id="缺失值NA与NULL"><a href="#缺失值NA与NULL" class="headerlink" title="缺失值NA与NULL"></a>缺失值NA与NULL</h2><p>NA代表存在，但是缺失；NULL代表空，不存在:</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c(<span class="number">1</span>,<span class="literal">NA</span>,<span class="number">3</span>)</div><div class="line">&gt; mean(x)</div><div class="line">[<span class="number">1</span>] <span class="literal">NA</span></div><div class="line">&gt; mean(x, na.rm=<span class="literal">T</span>)</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div><div class="line">&gt; x &lt;- c(<span class="number">1</span>,<span class="literal">NULL</span>,<span class="number">3</span>)</div><div class="line">&gt; mean(x)</div><div class="line">[<span class="number">1</span>] <span class="number">2</span></div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">3</span></div><div class="line">&gt; mode(x[<span class="number">1</span>])</div><div class="line">[<span class="number">1</span>] <span class="string">"numeric"</span></div><div class="line">&gt; mode(x[<span class="number">2</span>])</div><div class="line">[<span class="number">1</span>] <span class="string">"numeric"</span></div></pre></td></tr></table></figure>
 <p>NULL可以初始化向量：</p>
@@ -316,7 +317,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/15/R-programming-3/"  data-tooltip="R语言学习（三）矩阵">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/15/R-programming-3/"  data-tooltip="R语言学习（三）矩阵和数组">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -374,7 +375,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -406,7 +407,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/15/R-programming-3/"  data-tooltip="R语言学习（三）矩阵">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/15/R-programming-3/"  data-tooltip="R语言学习（三）矩阵和数组">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -464,7 +465,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -629,7 +630,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>This is to show how to run Lemon-Tree algorithm on our dataset.<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>This is to show how to run Lemon-Tree algorithm on our dataset.</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -670,7 +671,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://hanunimaas.com/2017/11/15/R-programming-3/">
-                            <h3 class="media-heading">R语言学习（三）矩阵</h3>
+                            <h3 class="media-heading">R语言学习（三）矩阵和数组</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
@@ -679,13 +680,19 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵</p></div>
+                        <div class="media-content hide-xs font-merryweather"><p>第三章——矩阵和数组</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
                 </div>
                 
                 <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://hanunimaas.com/2017/11/19/yunman-photography-1/">
+                            <img class="media-image" src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511384236/yunman/s29418542.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://hanunimaas.com/2017/11/19/yunman-photography-1/">
@@ -698,13 +705,19 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><h2 id="摄影中的主观创造"><a href="#摄影中的主观创造" class="headerlink" title="摄影中的主观创造"></a>摄影中的主观创造</h2><p>一幅照片，展示的是摄影师想让你看到的角度。这个时间和空间的截片，不是简单地对真实世界的记录和如明信片的景点介绍，而是情绪的表达，是摄影师心中的风景。它强调的是按下快门那一瞬间最能打动摄影师内心的景物，也是摄影师的创造力和艺术沉淀的综合体现。拍摄显而易见的客观景物本身只是记录和搬运美景，发现摄影师独特的主观视角才是艺术创作。<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>对于摄影和艺术创作的思考与讨论。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
                 </div>
                 
                 <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://hanunimaas.com/2017/11/19/yunman-photography-2/">
+                            <img class="media-image" src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511384236/yunman/s29418542.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://hanunimaas.com/2017/11/19/yunman-photography-2/">
@@ -717,7 +730,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><h2 id="摄影器材和设备"><a href="#摄影器材和设备" class="headerlink" title="摄影器材和设备"></a>摄影器材和设备</h2><h3 id="机身"><a href="#机身" class="headerlink" title="机身"></a>机身</h3><p>相对于大画幅和中画幅数码后背而言，135全画幅数码相机是画质、便携性和价格的完美结合点。另外，APS-C画幅具有体积小，价格相对低廉的特点，虽然高感相比全画幅差距较大，但也基本能满足多数业余爱好者的需要。<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>本篇讲述摄影器材和基础知识。<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -748,6 +761,31 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://hanunimaas.com/2017/11/22/R-programming-4/">
+                            <img class="media-image" src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511365999/R%20programming/background.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://hanunimaas.com/2017/11/22/R-programming-4/">
+                            <h3 class="media-heading">R语言学习（四）列表</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Nov 22, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>第四章——列表</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -755,7 +793,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                8 posts found
+                9 posts found
             </p>
         </div>
     </div>
