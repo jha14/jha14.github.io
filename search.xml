@@ -411,27 +411,27 @@
     <entry>
       <title><![CDATA[博士学习计划]]></title>
       <url>/2017/10/25/study_plan/</url>
-      <content type="html"><![CDATA[<p>毕业之前应当要完成的事。<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<!-- excerpt --> </p>
 <h2 id="应掌握的技能"><a href="#应掌握的技能" class="headerlink" title="应掌握的技能"></a>应掌握的技能</h2><ul>
 <li>精通R语言，以计算机专业人员而非统计学家那样使用R语言。</li>
 <li>掌握spark分布式计算，学习scala，具备分布式编程能力。</li>
-<li>追踪最新的机器学习算法，比如深度学习和神经网络等，学习CUDA。</li>
+<li>关注最新的机器学习算法：深度神经网络、高斯过程、增强学习等，学习CUDA和TensorFlow。</li>
+<li>git, LaTeX等基本科研工具的掌握。</li>
 </ul>
 <h2 id="应发表的文章"><a href="#应发表的文章" class="headerlink" title="应发表的文章"></a>应发表的文章</h2><ul>
-<li>一作SCI： 3-5篇，应有1-2篇高质量文章</li>
+<li>一作SCI： 3-5篇，应至少有1-2篇高质量文章</li>
 <li>非一作SCI： 若干</li>
 </ul>
 <p>目前一篇Nature Communications在投。</p>
-<h2 id="在美国的顶级实验室实习"><a href="#在美国的顶级实验室实习" class="headerlink" title="在美国的顶级实验室实习"></a>在美国的顶级实验室实习</h2><p>备选top lab：</p>
+<h2 id="在美国的顶级实验室实习"><a href="#在美国的顶级实验室实习" class="headerlink" title="在美国的顶级实验室实习"></a>在美国的顶级实验室实习</h2><p>备选top labs：</p>
 <ul>
-<li>Havard University(哈佛大学)</li>
-<li>Northeastern University(东北大学): <a href="https://www.barabasilab.com" target="_blank" rel="external">Barabási Lab</a></li>
+<li>Havard University(美国哈佛大学)</li>
+<li>Northeastern University(美国东北大学): <a href="https://www.barabasilab.com" target="_blank" rel="external">Barabási Lab</a></li>
 </ul>
 <h2 id="应去国家"><a href="#应去国家" class="headerlink" title="应去国家"></a>应去国家</h2><ul>
 <li>已去过：英国、法国、德国、美国、荷兰、比利时、意大利、西班牙、葡萄牙、奥地利、瑞典、丹麦、卢森堡、土耳其、匈牙利、斯洛伐克、斯洛文尼亚、罗马尼亚、梵蒂冈、摩纳哥、新加坡、印度尼西亚、</li>
 <li>将来要去：摩洛哥、希腊、俄罗斯、芬兰、爱沙尼亚、拉脱维亚、立陶宛、波兰、挪威、冰岛、保加利亚、克罗地亚、塞尔维亚、阿根廷、南极</li>
-</ul>
-]]></content>
+</ul>]]></content>
       
         <categories>
             
