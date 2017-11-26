@@ -6,24 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Han&#39;s Blog">
-    <title>Running Lemon-Tree on Arg1.CD68-correlated Modules - Han&#39;s Blog</title>
+    <title>Cytoscape Automation Workshop at Maastricht University - Han&#39;s Blog</title>
     <meta name="author" content="Han">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="This is to show how to run Lemon-Tree algorithm on our dataset">
+    <meta name="description" content="The workshop is given by Dr. Alexander Pico">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Running Lemon-Tree on Arg1.CD68-correlated Modules">
-<meta property="og:url" content="http://hanunimaas.com/2017/10/26/run-lemon-tree/index.html">
+<meta property="og:title" content="Cytoscape Automation Workshop at Maastricht University">
+<meta property="og:url" content="http://hanunimaas.com/2017/11/26/cytoscape-automation/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
-<meta property="og:description" content="This is to show how to run Lemon-Tree algorithm on our dataset">
+<meta property="og:description" content="The workshop is given by Dr. Alexander Pico">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-23T12:55:02.519Z">
+<meta property="og:updated_time" content="2017-11-26T20:58:40.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Running Lemon-Tree on Arg1.CD68-correlated Modules">
-<meta name="twitter:description" content="This is to show how to run Lemon-Tree algorithm on our dataset">
+<meta name="twitter:title" content="Cytoscape Automation Workshop at Maastricht University">
+<meta name="twitter:description" content="The workshop is given by Dr. Alexander Pico">
     
     
         
@@ -34,8 +34,8 @@
         <meta property="og:image" content="http://hanunimaas.com/assets/images/DSC29141.jpg"/>
     
     
-        <meta property="og:image" content="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511441587/research/cells_qlwbvs.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511441587/research/cells_qlwbvs.jpg" />
+        <meta property="og:image" content="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511728717/research/macsbio-cytoscape-workshop.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1511728717/research/macsbio-cytoscape-workshop.jpg" />
     
     
     
@@ -231,22 +231,16 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Running Lemon-Tree on Arg1.CD68-correlated Modules
+            Cytoscape Automation Workshop at Maastricht University
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-10-26T15:30:05+02:00">
+    <time itemprop="datePublished" datetime="2017-11-26T21:39:36+01:00">
 	
-		    Oct 26, 2017
+		    Nov 26, 2017
     	
     </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Research/">Research</a>
-
-
     
 </div>
 
@@ -255,57 +249,13 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>This is to show how to run Lemon-Tree algorithm on our dataset</p>
+            <p>The workshop is given by Dr. Alexander Pico</p>
 <a id="more"></a>
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Data"><span class="toc-text">Data</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Procedure"><span class="toc-text">Procedure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Possible-Improvements"><span class="toc-text">Possible Improvements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variables-in-R"><span class="toc-text">Variables in R</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lemon-Tree程序的基本步骤"><span class="toc-text">Lemon Tree程序的基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ganesh"><span class="toc-text">ganesh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tight-cluster"><span class="toc-text">tight_cluster</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#regulators"><span class="toc-text">regulators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关文献-References"><span class="toc-text">相关文献 References</span></a></li></ol>
-<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><ul>
-<li>For WGCNA: transcriptomics data with stable patients, same classification as Jan’s version.</li>
-<li>For Lemon-Tree: transcriptomics data with 7 modules on all patients. See the file arg1.cd68.stable.pdf.</li>
-<li>Modules: indianred3, lightslateblue, brown4, mediumpurple4, orangered1, yellowgreen, firebrick4.</li>
-<li>Preprocess: Scale the feature to standard normal distribution before running the Lemon-Tree program.</li>
-</ul>
-<h2 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h2><ol>
-<li>From WGCNA results on stable patients, select 7 interesting modules (5 positive correlation, 2 negative correlation to Arg1.CD68) including 1645 unique genes.</li>
-<li>From 1645 genes select candidate regulators according to GO annotation. 205 candidates were selected.<br>GO:0004871, signal transducer activity<br>GO:0000989, transcription factor activity, transcription factor binding</li>
-<li>Run Lemon-Tree on the 1645 genes with all stable and unstable patients. Clustering result of Lemon-Tree includes 36 clusters with 1456 genes.</li>
-<li>Assign 205 candidate regulators on 36 clusters. 100 highest assignments were selected. 35 of all clusters have regulators. 74 unique regulators were selected.<br>Frequency of regulators occurred more than one time: BRD7(3), ENY2(2), EVI2A(3), GPR65(3), GRN(4), HEYL(6), LANCL1(2), MAP4K4(2), NMI(3), RERE(2), ROR(2), SETD3(2), SS18L2(2), TGFB1I1(2), TOB1(2) </li>
-<li>GO enrichment analysis on the 35 clusters.</li>
-<li>Trace the genes back from WGCNA modules. Most of the genes gathering in one Lemon-Tree cluster are also belong to one WGCNA module.</li>
-<li>Calculate the genes to WGCNA eigengene. Regulator genes tend to have higher correlation to the corresponding WGCNA eigengene.</li>
-</ol>
-<h2 id="Possible-Improvements"><a href="#Possible-Improvements" class="headerlink" title="Possible Improvements"></a>Possible Improvements</h2><ol>
-<li>Check the regulators which regulate more than one cluster.</li>
-<li>Check the GO results to find interesting clusters.</li>
-<li>Add miRNA as regulators.</li>
-</ol>
-<h2 id="Variables-in-R"><a href="#Variables-in-R" class="headerlink" title="Variables in R"></a>Variables in R</h2><ul>
-<li><code>transcriptomics.stable</code>    #WGCNA data</li>
-<li><code>moduleColors.stable</code>    #WGCNA modules</li>
-<li><code>regulators.old</code>        # GO:0004871 &amp; GO:0000989 genes</li>
-<li><code>stable.arg1.modules</code>    #7 interesting modules</li>
-<li><code>stable.arg1.genes</code>    #selected genes from 7 modules</li>
-<li><code>arg1.transcriptomics.stableandunstable.scaled</code>        #scaled data for Lemon-Tree, 1645 genes</li>
-<li><code>ID.nodup/arg1.transcriptomics.IDs</code>    #ID information</li>
-<li><code>arg1.regulators.old</code>    #candidate regulators for 7 modules</li>
-<li><code>tight.clusters.su</code>    #Lemon-Tree clustering result, 1456 genes</li>
-<li><code>top.regs.su.old</code>        #top 100 regulator assignments</li>
-<li><code>reg.list.su.old</code>        #regulator list for output</li>
-<li><code>reg.gene.list.su.old</code>    $regulator and gene list for output</li>
-</ul>
-<h2 id="Lemon-Tree程序的基本步骤"><a href="#Lemon-Tree程序的基本步骤" class="headerlink" title="Lemon Tree程序的基本步骤"></a>Lemon Tree程序的基本步骤</h2><h3 id="ganesh"><a href="#ganesh" class="headerlink" title="ganesh"></a>ganesh</h3><p>通过gibbs sampling进行双向聚类：</p>
-<ol>
-<li>随机分配N个gene到K0个类，随机分配M个样本到Lk,0个样本类。</li>
-<li>N次循环，从某类中随机删除gene i，对每个类，以及i单独成为一类的情况，计算将i放入k中的贝叶斯概率。</li>
-<li>经过n次迭代得到稳定的聚类结果。</li>
-</ol>
-<h3 id="tight-cluster"><a href="#tight-cluster" class="headerlink" title="tight_cluster"></a>tight_cluster</h3><h3 id="regulators"><a href="#regulators" class="headerlink" title="regulators"></a>regulators</h3><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先要标准化 scale features</p>
-<p>其次要选择candidate regulator genes from GO annotation</p>
-<h2 id="相关文献-References"><a href="#相关文献-References" class="headerlink" title="相关文献 References"></a>相关文献 References</h2><ul>
-<li>Segal E, Shapira M, Regev A, Pe’er D, Botstein D, et al.(2003) <a href="https://www.nature.com/articles/ng1165" target="_blank" rel="external">Module networks: identifying regulatory modules and their condition-specific regulators from gene expression data</a>. Nature Genetics 34: 166–167.</li>
-<li>Bonnet E, Calzone L, Michoel T. (2015) <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003983" target="_blank" rel="external">Integrative multi-omics module network inference with Lemon-Tree</a>. PLoS Comput Biol 11(2): e1003983.</li>
-<li>Joshi A, Van de Peer Y, Michoel T (2008) <a href="https://academic.oup.com/bioinformatics/article/24/2/176/2748127/Analysis-of-a-Gibbs-sampler-method-for-model-based" target="_blank" rel="external">Analysis of a Gibbs sampler for model based clustering of gene expression data</a>. Bioinformatics 24: 176–183.</li>
-<li>Joshi A, De Smet R, Marchal K,Van de Peer Y, Michoel T( 2009) <a href="https://academic.oup.com/bioinformatics/article/25/4/490/249900/Module-networks-revisited-computational-assessment" target="_blank" rel="external">Module networks revisited: computational assessment and prioritization of model predictions</a>. Bioinformatics 25: 490- 496.</li>
-</ul>
+<p><a href="https://www.maastrichtuniversity.nl/events/cytoscape-automation-workshop-dr-alexander-pico" target="_blank" rel="external">Main Webpage of this Workshop</a></p>
+<p><a href="https://cytoscape.github.io/cytoscape-tutorials/presentations/advanced-automation-2017-unimaas.html#/" target="_blank" rel="external">Presentation at Maastricht University</a></p>
+<p><a href="https://cytoscape.github.io/cytoscape-tutorials/contents/index.html#/" target="_blank" rel="external">Cytoscape Tutorial</a></p>
+<p><a href="https://github.com/cytoscape" target="_blank" rel="external">Cytoscape Github Page</a></p>
+<p><a href="https://github.com/cytoscape/cytoscape-automation/blob/master/for-scripters/R/advanced-cancer-networks-and-data.Rmd" target="_blank" rel="external">A Cytoscape Automation Example: Loading Disease Network into Cytoscape via R</a></p>
 
             
         </div>
@@ -318,7 +268,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/01/R-programming-2/"  data-tooltip="R语言学习（二）向量">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -326,7 +276,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/R_programming_1/" data-tooltip="R语言学习（一）入门">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/22/R-programming-4/" data-tooltip="R语言学习（四）列表">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -344,7 +294,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -352,7 +302,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -360,7 +310,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -368,7 +318,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -376,7 +326,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -408,7 +358,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/01/R-programming-2/"  data-tooltip="R语言学习（二）向量">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -416,7 +366,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/26/R_programming_1/" data-tooltip="R语言学习（一）入门">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/22/R-programming-4/" data-tooltip="R语言学习（四）列表">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -434,7 +384,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -442,7 +392,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -450,7 +400,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -458,7 +408,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -466,7 +416,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -483,7 +433,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -491,7 +441,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -499,7 +449,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -507,7 +457,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/10/26/run-lemon-tree/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://hanunimaas.com/2017/11/26/cytoscape-automation/">
                     <i class="fa fa-weibo"></i><span>Share on Weibo</span>
                 </a>
             </li>

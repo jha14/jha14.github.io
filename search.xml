@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title><![CDATA[Cytoscape Automation Workshop at Maastricht University]]></title>
+      <url>/2017/11/26/cytoscape-automation/</url>
+      <content type="html"><![CDATA[<p>The workshop is given by Dr. Alexander Pico</p>
+<a id="more"></a>
+<p><a href="https://www.maastrichtuniversity.nl/events/cytoscape-automation-workshop-dr-alexander-pico" target="_blank" rel="external">Main Webpage of this Workshop</a></p>
+<p><a href="https://cytoscape.github.io/cytoscape-tutorials/presentations/advanced-automation-2017-unimaas.html#/" target="_blank" rel="external">Presentation at Maastricht University</a></p>
+<p><a href="https://cytoscape.github.io/cytoscape-tutorials/contents/index.html#/" target="_blank" rel="external">Cytoscape Tutorial</a></p>
+<p><a href="https://github.com/cytoscape" target="_blank" rel="external">Cytoscape Github Page</a></p>
+<p><a href="https://github.com/cytoscape/cytoscape-automation/blob/master/for-scripters/R/advanced-cancer-networks-and-data.Rmd" target="_blank" rel="external">A Cytoscape Automation Example: Loading Disease Network into Cytoscape via R</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[R语言学习（四）列表]]></title>
       <url>/2017/11/22/R-programming-4/</url>
       <content type="html"><![CDATA[<p>第四章——列表</p>
