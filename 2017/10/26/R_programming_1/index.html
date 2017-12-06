@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-22T20:16:41.699Z">
+<meta property="og:updated_time" content="2017-12-05T21:18:04.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（一）入门">
 <meta name="twitter:description" content="R语言免费，开源，语法简单，适合从事数学、统计学等非计算机人员学习使用。">
@@ -263,7 +263,7 @@
 <h2 id="运行R程序"><a href="#运行R程序" class="headerlink" title="运行R程序"></a>运行R程序</h2><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; <span class="keyword">source</span>(<span class="string">"z.R"</span>)</div></pre></td></tr></table></figure>
 <h3 id="批处理模式-ubuntu-terminal"><a href="#批处理模式-ubuntu-terminal" class="headerlink" title="批处理模式(ubuntu terminal)"></a>批处理模式(ubuntu terminal)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ R CMD BATCH z.R</div></pre></td></tr></table></figure>
 <h2 id="R语言函数的变量作用域"><a href="#R语言函数的变量作用域" class="headerlink" title="R语言函数的变量作用域"></a>R语言函数的变量作用域</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>只有函数体内部可见的变量是“局部变量”</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">5</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>() x &lt;-<span class="number">4</span></div><div class="line">&gt; f()</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">5</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- <span class="number">5</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>() x &lt;- <span class="number">4</span></div><div class="line">&gt; f()</div><div class="line">&gt; x</div><div class="line">[<span class="number">1</span>] <span class="number">5</span></div></pre></td></tr></table></figure>
 <h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数之外创建的变量，在函数内部也可以访问。<br>可以通过&lt;&lt;-在函数内部给全局变量赋值</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; y &lt;- <span class="number">4</span></div><div class="line">&gt; f &lt;- <span class="keyword">function</span>(x) y &lt;&lt;- <span class="number">3</span></div><div class="line">&gt; f()</div><div class="line">&gt; y</div><div class="line">[<span class="number">1</span>] <span class="number">3</span></div></pre></td></tr></table></figure>
 <h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; g &lt;- <span class="keyword">function</span>(x, y=<span class="number">2</span>, z=<span class="literal">T</span>)&#123;<span class="keyword">...</span>&#125;</div></pre></td></tr></table></figure>
@@ -804,7 +804,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                11 posts found
+                12 posts found
             </p>
         </div>
     </div>

@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="第五章——数据框">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-05T20:55:05.365Z">
+<meta property="og:updated_time" content="2017-12-05T20:57:29.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言学习（五）数据框">
 <meta name="twitter:description" content="第五章——数据框">
@@ -259,13 +259,13 @@
 <a id="more"></a>
 <h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建数据框"><span class="toc-text">创建数据框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵式操作"><span class="toc-text">矩阵式操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#提取子数据库"><span class="toc-text">提取子数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺失值处理"><span class="toc-text">缺失值处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用rbind-和cbind-函数"><span class="toc-text">使用rbind()和cbind()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用apply-函数"><span class="toc-text">使用apply()函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并数据库"><span class="toc-text">合并数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用于数据框的函数"><span class="toc-text">应用于数据框的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在数据库上应用lapply-和sapply-函数"><span class="toc-text">在数据库上应用lapply()和sapply()函数</span></a></li></ol></li></ol>
 <p>数据框类似矩阵，然而与矩阵不同的是，数据框每一列可以是不同的数据类型。正如列表可以类比为存储不同数据类型的一维向量，数据库可以类比为按列存储不同数据类型的二维矩阵。就技术层面而言，数据框是每个组件长度都相等的列表。</p>
-<h2 id="创建数据框"><a href="#创建数据框" class="headerlink" title="创建数据框"></a>创建数据框</h2><p><code>stringAsFactors = FALSE</code>，在创建数据框的时候，如果没有给定参数，那么<code>stringAsFactors</code>默认为<code>TRUE</code>，这意味着如果用字符向量创建数据框，R会将向量转换为“因子”<code>factor</code>。</p>
+<h2 id="创建数据框"><a href="#创建数据框" class="headerlink" title="创建数据框"></a>创建数据框</h2><p>首先说<code>stringAsFactors = FALSE</code>，在创建数据框的时候，如果没有给定参数，那么<code>stringAsFactors</code>默认为<code>TRUE</code>，这意味着如果用字符向量创建数据框，R会将向量转换为“因子”<code>factor</code>:</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; kids &lt;- c(<span class="string">"Jack"</span>, <span class="string">"Jill"</span>)</div><div class="line">&gt; ages &lt;- c(<span class="number">12</span>,<span class="number">10</span>)</div><div class="line">&gt; d &lt;- data.frame(kids, ages, stringsAsFactors=<span class="literal">F</span>)</div><div class="line">&gt; d</div><div class="line">  kids ages</div><div class="line"><span class="number">1</span> Jack   <span class="number">12</span></div><div class="line"><span class="number">2</span> Jill   <span class="number">10</span></div><div class="line">&gt; d[[<span class="number">1</span>]]</div><div class="line">[<span class="number">1</span>] <span class="string">"Jack"</span> <span class="string">"Jill"</span></div><div class="line">&gt; d$kids</div><div class="line">[<span class="number">1</span>] <span class="string">"Jack"</span> <span class="string">"Jill"</span></div><div class="line">&gt; d[,<span class="number">1</span>]</div><div class="line">[<span class="number">1</span>] <span class="string">"Jack"</span> <span class="string">"Jill"</span></div><div class="line">&gt; str(d)</div><div class="line"><span class="string">'data.frame'</span>:	<span class="number">2</span> obs. of  <span class="number">2</span> variables:</div><div class="line"> $ kids: chr  <span class="string">"Jack"</span> <span class="string">"Jill"</span></div><div class="line"> $ ages: num  <span class="number">12</span> <span class="number">10</span></div></pre></td></tr></table></figure>
 <p>有三种方式访问数据框的第一列：<code>d[[1]]</code>、<code>d[,1]</code>、<code>d$kids</code>。其中第三种更简明，而且比前两种方式更安全。这种方式可以更好的指定列，并且减少出错的可能性。但是在写一般的代码时，矩阵式的索引<code>d[,1]</code>也是需要的。</p>
 <h2 id="矩阵式操作"><a href="#矩阵式操作" class="headerlink" title="矩阵式操作"></a>矩阵式操作</h2><h3 id="提取子数据库"><a href="#提取子数据库" class="headerlink" title="提取子数据库"></a>提取子数据库</h3><p>可以像矩阵那样按行或按列提取子数据框。如果返回的是(某行/列)向量，设定参数<code>drop = FALSE</code>可以得到一个一行/列的数据框：<code>dataframe[2:5, 2, drop = FALSE]</code>。</p>
 <p>也可以做筛选：<code>dataframe[dataframe$V1 &gt; 5,]</code></p>
 <h3 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h3><p>有些情况下，在有缺失值的时候，需要设置参数<code>na.rm = TRUE</code>来明确告诉R忽略缺失值：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c(<span class="number">2</span>,<span class="literal">NA</span>,<span class="number">4</span>)</div><div class="line">&gt; mean(x)</div><div class="line">[<span class="number">1</span>] <span class="literal">NA</span></div><div class="line">&gt; mean(x, na.rm=<span class="literal">T</span>)</div><div class="line">[<span class="number">1</span>] <span class="number">3</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; x &lt;- c(<span class="number">2</span>,<span class="literal">NA</span>,<span class="number">4</span>)</div><div class="line">&gt; mean(x)</div><div class="line">[<span class="number">1</span>] <span class="literal">NA</span></div><div class="line">&gt; mean(x, na.rm = <span class="literal">T</span>)</div><div class="line">[<span class="number">1</span>] <span class="number">3</span></div></pre></td></tr></table></figure>
 <p>使用<code>subset()</code>函数，不用自己设定<code>na.rm = TRUE</code>。可以把它应用在数据框上来选择行。列名称将从给定数据框中获取。以下两句作用是相同的：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><div class="line">&gt; dataframe[dataframe$V1 &gt; <span class="number">5</span>,]</div><div class="line">&gt; subset(dataframe, V1 &gt; <span class="number">5</span>)</div></pre></td></tr></table></figure>
 <p>使用<code>complete.cases()</code>可以返回含有缺失值的行。</p>
@@ -299,7 +299,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/06/yunman-photography-3/"  data-tooltip="《极致之美》——前期篇">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -389,7 +389,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/06/yunman-photography-3/"  data-tooltip="《极致之美》——前期篇">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -806,7 +806,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                11 posts found
+                12 posts found
             </p>
         </div>
     </div>
