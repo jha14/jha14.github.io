@@ -3,6 +3,61 @@
   
     
     <entry>
+      <title><![CDATA[测试α6300相机ISO不变性]]></title>
+      <url>/2017/12/08/testing-ISO-invariance/</url>
+      <content type="html"><![CDATA[<!-- excerpt --> 
+<!-- toc -->
+<h2 id="ISO不变性"><a href="#ISO不变性" class="headerlink" title="ISO不变性"></a>ISO不变性</h2><p>是指在不同的ISO下以相同的光圈和快门拍摄照片，在后期调整曝光一致以后图像的噪点和画质等维持相同水平，成为该相机具有ISO不变性的特点。</p>
+<h2 id="测试α6300相机ISO不变性"><a href="#测试α6300相机ISO不变性" class="headerlink" title="测试α6300相机ISO不变性"></a>测试α6300相机ISO不变性</h2><p>测试方法：固定光圈和快门，固定白平衡，关闭机内降噪，在不同的ISO下对同样的场景拍摄一组raw格式照片，并后期调整，统一曝光。</p>
+<ul>
+<li>光圈：f/2.0</li>
+<li>快门：1/25s</li>
+<li>ISO: 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600。其中3200为机内多重测光结果下的标准曝光。</li>
+<li>统一曝光：在Lightroom中，分别对以上图像进行后期调整 +5EV, +4EV, +3EV, +2EV, +1EV, 0EV, -1EV, -2EV, -3EV曝光调整。</li>
+</ul>
+<p>首先是9张不同曝光的照片，相同光圈快门不同ISO：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771798/ISO%20invariance/2017-12-08_22.45.26.jpg" alt="9 photos"></p>
+<p>统一曝光：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771799/ISO%20invariance/2017-12-08_22.47.19.jpg" alt="unify exposure"></p>
+<p>ISO100(+5EV) vs ISO3200：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771798/ISO%20invariance/2017-12-08_22.50.12.jpg" alt="ISO100(+5EV) vs ISO3200"></p>
+<p>只有高ISO(25600)的几张过曝部分无法还原，高光部分有些色彩偏移。总体上来说不同ISO下图像水准基本一致。</p>
+<p>ISO100(+5EV) vs ISO3200, 100%：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771799/ISO%20invariance/2017-12-08_22.50.46.jpg" alt="ISO100(+5EV) vs ISO3200, 100%"></p>
+<p>可以看到ISO100(+5EV)噪点略高，但总体上基本保持一致，色调和曝光等没有明显偏移和恶化。</p>
+<p>ISO3200 vs ISO25600(-3EV)：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771799/ISO%20invariance/2017-12-08_22.51.44.jpg" alt="ISO3200 vs ISO25600(-3EV)"></p>
+<p>ISO3200 vs ISO25600(-3EV), 100%：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771800/ISO%20invariance/2017-12-08_22.52.05.jpg" alt="ISO3200 vs ISO25600(-3EV), 100%"></p>
+<p>可以看到高ISO并不意味着高噪点。调整曝光后，噪点水平几乎一致。然而过曝部分无法通过后期还原。</p>
+<p>最后再看一下相同曝光不同ISO下的画质对比，ISO100 vs ISO3200, 100%：</p>
+<p><img src="http://res.cloudinary.com/dgkrg2ry1/image/upload/v1512771799/ISO%20invariance/2017-12-08_22.53.13.jpg" alt="ISO100 vs ISO3200, 100%"></p>
+<p>在有条件接收充足光线的情况下，还是可以明显看到ISO100画质要远好于ISO3200。</p>
+<p>##结论</p>
+<p><strong>α6300具有ISO不变性，在不同的ISO下拍摄，最终调整曝光后，画面质量和噪点几乎不变。</strong></p>
+<h2 id="ISO不变性的意义"><a href="#ISO不变性的意义" class="headerlink" title="ISO不变性的意义"></a>ISO不变性的意义</h2><p>ISO不变性并不是评价一部相机成像质量的指标。它只反映出相机传感器的性质，也就是说通过调整相机ISO设置提高曝光和后期提高曝光几乎等同，这意味着该相机的ISO主要是靠内部处理器对传感器采集的信号进行放大运算而实现的，且该放大过程与计算机后期运算基本等同。</p>
+<h2 id="ISO不变性的用途"><a href="#ISO不变性的用途" class="headerlink" title="ISO不变性的用途"></a>ISO不变性的用途</h2><ul>
+<li>在一些光线较暗，光比较大的场景中（比如城市夜景），按照机内测光增加ISO曝光，往往高光部分会过曝，失去原有的色彩。可以使用低ISO进行曝光，后期再提亮暗部，既可以保持高光不过曝，又可以恢复暗部的细节。</li>
+<li>在星空和银河摄影中，光线极暗，为保证接收到足够光线，需要大光圈和长曝光。然而由于地球自转的原因，为了保证星星不会拖影，超广角镜头下曝光时间通常最大只能达到30秒，在这个时候只有通过增加ISO获得准确曝光。</li>
+<li>高ISO并不可怕，用高ISO拍摄并不代表噪点多。可以看到ISO25600拍摄照片再降3EV曝光后和ISO3200的照片噪点水平基本一致。这一点在暗光摄影中非常有用。在星空摄影中可以向右曝光，保证高光不过曝的前提下记录足够多的细节，在后期再还原标准曝光。</li>
+</ul>
+<p>需要注意的是，很多相机虽然具有ISO不变性，但不可滥用。</p>
+<ul>
+<li>ISO不变性只是近似结果，通常并不意味着不同ISO下调整曝光后的图像画质可以达到完全一致的水平。</li>
+<li>高ISO下拍摄再降低曝光，虽然不会影响噪点水平，但是高ISO下图像的动态范围会减小。</li>
+<li>高ISO下向右曝光虽然可以保留更多细节，但是要避免高光过曝，过曝部分后期无法挽救。</li>
+</ul>]]></content>
+      
+        <categories>
+            
+            <category> Photography </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[《极致之美》——前期篇]]></title>
       <url>/2017/12/06/yunman-photography-3/</url>
       <content type="html"><![CDATA[<!-- excerpt --> 
